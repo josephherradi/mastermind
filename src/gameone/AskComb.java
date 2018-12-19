@@ -14,14 +14,18 @@ class AskComb{
     }
 
     public int [] AskN() {
-        int[] proposition= new int[n];
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Entrez les ");
-        System.out.print(n);
         System.out.print(" chiffres de votre proposition ");
-        for (int i = 0; i < n; i++) {
-            proposition[i] = scanner.nextInt();
+
+
+        String saisie = scanner.next();
+
+        int[] proposition= new int[saisie.length()];
+
+        for (int i = 0; i < saisie.length(); i++) {
+            proposition[i] = Integer.parseInt(saisie.charAt(i)+"");
         }
         return proposition;
     }

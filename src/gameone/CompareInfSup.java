@@ -1,4 +1,5 @@
 package gameone;
+import java.util.Arrays;
 
 public class CompareInfSup {
     /**
@@ -12,19 +13,31 @@ public class CompareInfSup {
     }
 
     public String[] compare(int[] combinaison, int[] proposition) {
-        String[] ResCompare = new String[n];
-
+        String[] resCompare = new String[n];
+        try {
         for (int i = 0; i < n; i++) {
-            if (combinaison[i] == proposition[i]) {
-                ResCompare[i] = "=";
-            } else if (combinaison[i] < proposition[i]) {
-                ResCompare[i] = "-";
-            }
-            else {
-                ResCompare[i] = "+";
-            }
 
+               if (combinaison[i] == proposition[i]) {
+                   resCompare[i] = "=";
+               } else if (combinaison[i] < proposition[i]) {
+                   resCompare[i] = "-";
+               } else {
+                   resCompare[i] = "+";
+               }
+
+           }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Veuillez proposer une combinaison à "+n+" chiffres");
         }
-        return ResCompare;
+        return resCompare;
+    }
+
+    public boolean resGame(String[] resCompare) {
+
+        String success[] = new String[n];
+        for (int i=0;i<n;i++){success[i]="=";}
+        boolean equaltst = Arrays.equals(resCompare, success);
+        return equaltst;
     }
 }
+
