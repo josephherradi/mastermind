@@ -28,6 +28,9 @@ public class StartChallengerMode {
 
         do {
             nTry++;
+            System.out.print("Entrez les "+n);
+            System.out.print(" chiffres de votre proposition ");
+
             AskComb askComb = new AskComb(n);
             int[] resultPropos = askComb.AskN();
 

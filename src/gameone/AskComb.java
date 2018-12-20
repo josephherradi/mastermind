@@ -16,9 +16,6 @@ class AskComb{
     public int [] AskN() {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrez les ");
-        System.out.print(" chiffres de votre proposition ");
-
 
         String saisie = scanner.next();
 
