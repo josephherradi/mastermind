@@ -16,10 +16,8 @@ public class StartDefenderMode {
         this.nMaxTry = nMaxTry;
     }
 
-    static void defenderMode(int n, int m, int nMaxTry) {
+    public void defenderMode(int n, int m, int nMaxTry) {
         int nTry = 0;
-        int[] proposition = new int[n];
-        int[] combinaison = new int[n];
         boolean equalNtry = true;
         System.out.print("Entrez les " + n + " chiffres de la combinaison ");
 
@@ -29,32 +27,29 @@ public class StartDefenderMode {
         String resultFCombi = IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println(resultFCombi);
 
-        NumberGen numberGen = new NumberGen(n, m);
-        int[] resultPropos = numberGen.combiGen();
-        System.out.print("Proposition de l'ordinateur ");
-        String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(resultFPropos);
-
+        String[] resultCompare= new String[n];
+        Arrays.fill(resultCompare,"0");
+        int[] resultPropos= new int[n];
+        Arrays.fill(resultPropos,0);
 
         CompareInfSup compareInfSup = new CompareInfSup(n);
-        String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
-        boolean resultTry = compareInfSup.resGame(resultCompare);
-        equalNtry = resultTry;
+
 
 
         do {
             nTry++;
-            NumberGen numberGen2 = new NumberGen(n, m);
-            int[] resultPropos2 = numberGen2.combiGen();
-            System.out.print("Proposition de l'ordinateur ");
-            String result2FPropos = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-            System.out.println(result2FPropos);
 
-            CompareInfSup compareInfSup2 = new CompareInfSup(n);
-            String[] resultCompare2 = compareInfSup2.compare(resultCombi, resultPropos2);
-            boolean resultTry2 = compareInfSup.resGame(resultCompare2);
-            equalNtry = resultTry2;
-        } while (!equalNtry && (nTry < nMaxTry-1));
+            resultPropos = this.smartCombiGen(resultCompare,resultPropos);
+            System.out.print("Proposition de l'ordinateur ");
+            String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
+            System.out.println(resultFPropos);
+
+            resultCompare = compareInfSup.compare(resultCombi, resultPropos);
+            boolean resultTry = compareInfSup.resGame(resultCompare);
+            equalNtry = resultTry;
+
+
+        } while (!equalNtry && (nTry < nMaxTry - 1));
 
         if (equalNtry) {
             System.out.print("Success ! L'ordinateur a trouvé la combinaison en ");
@@ -67,7 +62,33 @@ public class StartDefenderMode {
         }
 
     }
+
+    private int smartPickN(int m2) {
+
+        return 1 + (int) (Math.random() * m2);
+    }
+
+    public int[] smartCombiGen(String[] resultCompare, int[] resultPropos) {
+        int[] smartPropos = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (resultCompare[i] == "=") {
+                smartPropos[i] = resultPropos[i];
+            } else if (resultCompare[i] == "+") {
+                int m2 = resultPropos[i] + 1;
+                smartPropos[i] = smartPickN(m2);
+            } else if (resultCompare[i] == "-") {
+                int m2 = resultPropos[i] - 1;
+                smartPropos[i] = smartPickN(m2);
+            }
+            else if(resultCompare[i]=="0"){
+                smartPropos[i]=smartPickN(9);
+            }
+        }
+            return smartPropos;
+
+    }
 }
+
 
 
 

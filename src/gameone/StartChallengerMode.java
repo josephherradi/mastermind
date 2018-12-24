@@ -17,8 +17,7 @@ public class StartChallengerMode {
 
     static void challengeMode(int n, int m, int nMaxTry) {
         int nTry = 0;
-        int[] proposition = new int[n];
-        int[] combinaison = new int[n];
+
         boolean equalNtry= true;
 
         NumberGen numberGen = new NumberGen(n, m);
@@ -26,15 +25,17 @@ public class StartChallengerMode {
         String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println(resultFcombi);
 
+        AskComb askComb = new AskComb(n);
+        CompareInfSup compareInfSup = new CompareInfSup(n);
+
+
+
         do {
             nTry++;
             System.out.print("Entrez les "+n);
             System.out.print(" chiffres de votre proposition ");
 
-            AskComb askComb = new AskComb(n);
             int[] resultPropos = askComb.AskN();
-
-            CompareInfSup compareInfSup = new CompareInfSup(n);
             String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
             boolean resultTry = compareInfSup.resGame(resultCompare);
             equalNtry=resultTry;
