@@ -1,6 +1,7 @@
 package gameone;
 
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -38,6 +39,7 @@ public class StartDefenderMode {
 
         do {
             nTry++;
+            this.promptEnterKey();
 
             resultPropos = this.smartCombiGen(resultCompare,resultPropos);
             System.out.print("Proposition de l'ordinateur ");
@@ -63,9 +65,9 @@ public class StartDefenderMode {
 
     }
 
-    private int smartPickN(int m2) {
+    private int smartPickN(int p ,int m2) {
 
-        return 1 + (int) (Math.random() * m2);
+        return p + (int) (Math.random() * m2);
     }
 
     public int[] smartCombiGen(String[] resultCompare, int[] resultPropos) {
@@ -74,18 +76,25 @@ public class StartDefenderMode {
             if (resultCompare[i] == "=") {
                 smartPropos[i] = resultPropos[i];
             } else if (resultCompare[i] == "+") {
-                int m2 = resultPropos[i] + 1;
-                smartPropos[i] = smartPickN(m2);
+                int m2 = 9-(resultPropos[i] + 1);
+                int p= resultPropos[i] + 1;
+                smartPropos[i] = smartPickN(p,m2);
             } else if (resultCompare[i] == "-") {
                 int m2 = resultPropos[i] - 1;
-                smartPropos[i] = smartPickN(m2);
+                int p=1;
+                smartPropos[i] = smartPickN(p,m2);
             }
             else if(resultCompare[i]=="0"){
-                smartPropos[i]=smartPickN(9);
+                smartPropos[i]=smartPickN(1,9);
             }
         }
             return smartPropos;
 
+    }
+    public void promptEnterKey(){
+        System.out.println("Appuyez sur entrée pour continuer...");
+        Scanner prompt = new Scanner(System.in);
+        prompt.nextLine();
     }
 }
 
