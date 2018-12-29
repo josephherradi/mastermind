@@ -1,4 +1,4 @@
-package gameone;
+package mastermind;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -48,7 +48,7 @@ public class StartChallengerMode {
         } else {
             System.out.println("Fail :( ");
             System.out.println("La combinaison était");
-            System.out.println(Arrays.toString(resultCombi));
+            System.out.println(resultFcombi);
         }
 
     }

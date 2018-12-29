@@ -1,4 +1,4 @@
-package gameone;
+package mastermind;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package gameone;
+package mastermind;
 
 public class NumberGen {
     /**
