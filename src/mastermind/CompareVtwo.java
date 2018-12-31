@@ -5,53 +5,71 @@ import java.util.Arrays;
 public class CompareVtwo {
 
     int n;
+    boolean[] marked1;
+    boolean[] marked2;
+
+
+
 
     public CompareVtwo(int n) {
         this.n = n;
+        marked1 = new boolean[this.n];
+        marked2 = new boolean[this.n];
     }
+
+    public boolean[] getMarked1() {
+        return marked1;
+    }
+
+    public boolean[] getMarked2() {
+        return marked2;
+    }
+
 
     public int[] compareVtwo(int[] combinaison, int[] proposition) {
         int nb1 = 0;
         int nb2 = 0;
         int[] result= new int[n];
-        boolean[] marked = new boolean[n];
+        boolean[] marked1=new boolean[n];
+        boolean[] marked2=new boolean[n];
 
-        // cette première boucle sert à trouver
-        // les éléments bien devinés et correctement placés.
-        // Le tableau marque permet de marquer de tels
-        // éléments pour qu'ils ne soient pas considérés
-        // plusieurs fois.
+
+
+        // présents et bien placés
+
 
         for (int i = 0; i < n; i++) {
             if (combinaison [i] == proposition [i]) {
                 nb1++;
-                marked[i] = true;
+                marked1[i] = true;
             } else {
-                marked[i] = false;
+                marked1[i] = false;
             }
         }
-        // la deuxième boucle suivante sert à identifier les
-        // éléments bien devinés mais mal placés.
+        // présents et mal placés
 
         for (int i = 0; i < n; i++) {
             if (combinaison[i] != proposition[i]) {
                 int j = 0;
                 boolean trouveMalPlace = false;
                 while ((j < n) && !trouveMalPlace) {
-                    if (!marked[j] && (combinaison[i] == proposition[j])) {
+                    if (!marked1[j] && (combinaison[i] == proposition[j])) {
                         nb2++;
-                        marked[j] = true;
+                        marked2[j] = true;
                         trouveMalPlace = true;
                     }
                     j++;
                 }
             }
         }
-        System.out.println(Arrays.toString(marked));
+        System.out.println("Position des chiffres présents et bien placés "+Arrays.toString(marked1));
+        System.out.println("Position des chiffres présents et mal placés "+Arrays.toString(marked2));
+
         result[0] = nb1;
         result[1] = nb2;
         return result;
     }
+
 
     public boolean resGame2(int[] result){
         boolean success=false;
@@ -62,12 +80,12 @@ public class CompareVtwo {
     }
 
     public void showResult(int[] result) {
-        for (int i = 0; i < result[0]; i++)
-            System.out.print('#');
-        for (int i = 0; i < result[1]; i++)
-            System.out.print('O');
-        System.out.println();
+        System.out.println(result[0]+" chiffres bien présents et bien placés");
+        System.out.println(result[1]+" chiffres bien présents et mal placés");
+
     }
+
+
 
 
 }

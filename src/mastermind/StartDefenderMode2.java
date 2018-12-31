@@ -26,28 +26,26 @@ public class StartDefenderMode2 {
         String resultFCombi = IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println(resultFCombi);
 
-        boolean[] resultMarked = new boolean[n];
-        int[] resultPropos = new int[n];
-        Arrays.fill(resultPropos, 0);
+        NumberGen numberGen=new NumberGen(n,m);
 
-        CompareVtwo compareVtwo = new CompareVtwo(n);
-
-//        resultPropos = this.smartCombiGen2(resultMarked,resultPropos);
+        int[] resultPropos= numberGen.combiGen();
 
         System.out.print("Proposition de l'ordinateur ");
         String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println(resultFPropos);
 
-/*        resultMarked = compareVtwo.compareVtwo(resultCombi, resultPropos);
-        boolean resultTry = compareInfSup.resGame(resultCompare);
-        equalNtry = resultTry;
+        CompareVtwo compareVtwo=new CompareVtwo(n);
+        int[] resultCompare=compareVtwo.compareVtwo(resultCombi,resultPropos);
+        boolean resultTry=compareVtwo.resGame2(resultCompare);
 
+        if(resultTry){
+            System.out.println("sucess");
+        }
+        else
+        { System.out.println("fail");}
 
-    }
+        compareVtwo.showResult(resultCompare);
 
-    private int[] smartCombiGen2(boolean[] resultMarked, int[] resultPropos) {
-    }*/
-        System.out.println("h");
 
     }
 }

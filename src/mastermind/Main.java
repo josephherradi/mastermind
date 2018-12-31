@@ -17,5 +17,8 @@ public class Main {
         StartChallengerMode2 startChallengerMode2 = new StartChallengerMode2(n,m,nMaxTry);
         startChallengerMode2.challengeMode2(n,m,nMaxTry);
 
+/*        StartDefenderMode2 startDefenderMode2= new StartDefenderMode2(n,m,nMaxTry);
+        startDefenderMode2.defenderMode2(n,m,nMaxTry);*/
+
     }
 }

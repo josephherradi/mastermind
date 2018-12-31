@@ -1,5 +1,6 @@
 package mastermind;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -28,20 +29,27 @@ public class StartChallengerMode2 {
         System.out.println(resultFcombi);
 
 
-        System.out.print("Entrez les " + n + " chiffres de la combinaison ");
 
         AskComb askComb = new AskComb(n);
-        int[] resultPropos = askComb.AskN();
 
         CompareVtwo compareVtwo= new CompareVtwo(n);
 
-        int[] resultCompare = compareVtwo.compareVtwo(resultCombi,resultPropos);
-        boolean resultTry = compareVtwo.resGame2(resultCompare);
-        equalNtry=resultTry;
-
-        compareVtwo.showResult(resultCompare);
 
 
+        do {
+            nTry++;
+            System.out.println("");
+            System.out.print("Entrez les "+n);
+            System.out.print(" chiffres de votre proposition ");
+            int[] resultPropos = askComb.AskN();
+            int[] resultCompare = compareVtwo.compareVtwo(resultCombi, resultPropos);
+            boolean resultTry = compareVtwo.resGame2(resultCompare);
+            System.out.println("");
+            compareVtwo.showResult(resultCompare);
+
+            equalNtry = resultTry;
+
+        }while (!equalNtry && (nTry < nMaxTry));
 
         if (equalNtry) {
             System.out.print("Success ! Vous avez trouvé la combinaison");
