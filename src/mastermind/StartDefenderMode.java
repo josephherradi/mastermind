@@ -10,23 +10,30 @@ public class StartDefenderMode {
     int n;
     int m;
     int nMaxTry;
+    boolean equalNtry=true;
+
 
     public StartDefenderMode(int n, int m, int nMaxTry) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
+        this.equalNtry=equalNtry;
+
+    }
+
+    public boolean isEqualNtry() {
+        return equalNtry;
     }
 
     public void defenderMode(int n, int m, int nMaxTry) {
         int nTry = 0;
-        boolean equalNtry = true;
         System.out.print("Entrez les " + n + " chiffres de la combinaison ");
 
         AskComb askComb = new AskComb(n);
         int[] resultCombi = askComb.AskN();
 
         String resultFCombi = IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(resultFCombi);
+//        System.out.println(resultFCombi);
 
         String[] resultCompare= new String[n];
         Arrays.fill(resultCompare,"0");

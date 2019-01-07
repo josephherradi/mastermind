@@ -9,8 +9,6 @@ public class CompareVtwo {
     boolean[] marked2;
 
 
-
-
     public CompareVtwo(int n) {
         this.n = n;
         marked1 = new boolean[this.n];
@@ -21,18 +19,12 @@ public class CompareVtwo {
         return marked1;
     }
 
-    public boolean[] getMarked2() {
-        return marked2;
-    }
 
 
     public int[] compareVtwo(int[] combinaison, int[] proposition) {
         int nb1 = 0;
         int nb2 = 0;
-        int[] result= new int[n];
-        boolean[] marked1=new boolean[n];
-        boolean[] marked2=new boolean[n];
-
+        int[] result= new int[2];
 
 
         // présents et bien placés
@@ -62,8 +54,8 @@ public class CompareVtwo {
                 }
             }
         }
-        System.out.println("Position des chiffres présents et bien placés "+Arrays.toString(marked1));
-        System.out.println("Position des chiffres présents et mal placés "+Arrays.toString(marked2));
+ /*       System.out.println("Position des chiffres présents et bien placés "+Arrays.toString(marked1));
+        System.out.println("Position des chiffres présents et mal placés "+Arrays.toString(marked2));*/
 
         result[0] = nb1;
         result[1] = nb2;

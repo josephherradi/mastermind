@@ -8,17 +8,21 @@ public class StartChallengerMode {
     int n;
     int m;
     int nMaxTry;
+    boolean equalNtry=true;
 
     public StartChallengerMode(int n, int m, int nMaxTry) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
+        this.equalNtry=equalNtry;
     }
 
-    static void challengeMode(int n, int m, int nMaxTry) {
-        int nTry = 0;
+    public boolean isEqualNtry() {
+        return equalNtry;
+    }
 
-        boolean equalNtry= true;
+    public void challengeMode(int n, int m, int nMaxTry) {
+        int nTry = 0;
 
         NumberGen numberGen = new NumberGen(n, m);
         int[] resultCombi = numberGen.combiGen();
