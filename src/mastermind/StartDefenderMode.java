@@ -58,7 +58,7 @@ public class StartDefenderMode {
             equalNtry = resultTry;
 
 
-        } while (!equalNtry && (nTry < nMaxTry - 1));
+        } while (!equalNtry && (nTry < nMaxTry));
 
         if (equalNtry) {
             System.out.print("Success ! L'ordinateur a trouvé la combinaison en ");

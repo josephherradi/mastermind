@@ -9,16 +9,22 @@ public class StartDefenderMode2 {
     int n;
     int m;
     int nMaxTry;
+    boolean equalNtry=true;
+
 
     public StartDefenderMode2(int n, int m, int nMaxTry) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
+        this.equalNtry=equalNtry;
+    }
+
+    public boolean isEqualNtry() {
+        return equalNtry;
     }
 
     public void defenderMode2(int n, int m, int nMaxTry) {
         int nTry = 0;
-        boolean equalNtry = true;
         System.out.print("Entrez les " + n + " chiffres de la combinaison ");
 
         AskComb askComb = new AskComb(n);
@@ -54,7 +60,7 @@ public class StartDefenderMode2 {
             equalNtry = resultTry;
 
 
-        } while (!equalNtry && (nTry < nMaxTry - 1));
+        } while (!equalNtry && (nTry < nMaxTry));
 
         if (equalNtry) {
             System.out.print("Success ! L'ordinateur a trouvé la combinaison en ");
