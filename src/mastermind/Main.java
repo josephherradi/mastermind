@@ -20,7 +20,7 @@ public class Main {
 //        StartDefenderMode2 startDefenderMode2= new StartDefenderMode2(n,m,nMaxTry);
 //        startDefenderMode2.defenderMode2(n,m,nMaxTry);
             StartDuelMode startDuelMode= new StartDuelMode(n,m,nMaxTry);
-            startDuelMode.duelMode2(n,m,nMaxTry);
+            startDuelMode.duelMode1(n,m,nMaxTry);
 
     }
 }
