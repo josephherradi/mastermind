@@ -65,21 +65,54 @@ public class StartDuelMode {
 
     public void duelMode2(int n, int m, int nMaxTry) {
 
-        StartChallengerMode2 startChallengerMode2 = new StartChallengerMode2(n, m, nMaxTry);
-        StartDefenderMode2 startDefenderMode2 = new StartDefenderMode2(n, m, nMaxTry);
-        boolean resultModeCh = false;
-        boolean resultModeDef = false;
+        NumberGen numberGen = new NumberGen(n, m);
+        AskComb askComb = new AskComb(n);
+        CompareVtwo compareVtwoIA = new CompareVtwo(n);
+        CompareVtwo compareVtwoGamer = new CompareVtwo(n);
 
+
+
+        int[] resultCombi1 = numberGen.combiGen();
+        String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        System.out.println("Combinaison de l'IA " + resultFcombi1);
+        System.out.println("Entrez la combinaison du joueur");
+        int[] resultCombi2 = askComb.AskN();
+        String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        System.out.println("Combinaison du joueur " + resultFCombi2);
+
+        // initialisation variables defender
+
+        boolean[] marked= new boolean[n];
+        int[] resultPropos2= new int[n];
+        Arrays.fill(resultPropos2,0);
+        int[] result1= new int[2];
+        int[] result2= new int[2];
+
+
+        boolean resultTryGamer=false;
+        boolean resultTryIA=false;
         do {
-            System.out.println("Mode challenger");
-            startChallengerMode2.challengeMode2(n, m, nMaxTry);
-            resultModeCh = startChallengerMode2.isEqualNtry();
-            System.out.println("Mode Defender");
-            startDefenderMode2.defenderMode2(n, m, nMaxTry);
-            resultModeDef = startDefenderMode2.isEqualNtry();
-            this.resultGame(resultModeCh, resultModeDef);
-        } while (!(resultModeCh ^ resultModeDef));
+            System.out.println("Proposition du joueur");
+            int[] resultPropos1 = askComb.AskN();
 
+            result1 = compareVtwoGamer.compareVtwo(resultCombi1, resultPropos1);
+            resultTryGamer = compareVtwoGamer.resGame2(result1);
+
+            if(!resultTryGamer){
+
+                System.out.print("Proposition de l'ordinateur ");
+
+                resultPropos2 = this.smartCombiGen2(marked, resultPropos2);
+                String resultFPropos2 = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+                System.out.println(resultFPropos2);
+
+                result2 = compareVtwoIA.compareVtwo(resultCombi2, resultPropos2);
+                marked=compareVtwoIA.getMarked1();
+
+                resultTryIA = compareVtwoIA.resGame2(result2);}
+
+            this.resultGame(resultTryGamer,resultTryIA);
+        } while (!(resultTryGamer ^ resultTryIA));
 
     }
 
@@ -119,6 +152,23 @@ public class StartDuelMode {
 
     }
 
+
+    private int PickN() {
+
+        return 1 + (int) (Math.random() * m);
+    }
+    public int[] smartCombiGen2(boolean[] marked,int[] resultPropos) {
+        int[] smartPropos = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (marked[i] == true) {
+                smartPropos[i] = resultPropos[i];
+            } else if (marked[i] == false) {
+                smartPropos[i] = PickN();
+            }
+
+        }
+        return smartPropos;
+    }
 
 
 }

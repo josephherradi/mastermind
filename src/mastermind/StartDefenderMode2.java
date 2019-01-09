@@ -74,26 +74,6 @@ public class StartDefenderMode2 {
 
     }
 
-        /*NumberGen numberGen=new NumberGen(n,m);
-
-        int[] resultPropos= numberGen.combiGen();
-
-        System.out.print("Proposition de l'ordinateur ");
-        String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(resultFPropos);
-
-        CompareVtwo compareVtwo=new CompareVtwo(n);
-        int[] resultCompare=compareVtwo.compareVtwo(resultCombi,resultPropos);
-        boolean resultTry=compareVtwo.resGame2(resultCompare);
-
-        if(resultTry){
-            System.out.println("sucess");
-        }
-        else
-        { System.out.println("fail");}
-
-        compareVtwo.showResult(resultCompare);*/
-
 
 
 
