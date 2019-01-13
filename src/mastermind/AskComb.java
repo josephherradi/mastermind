@@ -2,10 +2,12 @@ package mastermind;
 
 import java.util.Scanner;
 
+/**
+ *
+ *
+ */
+
 class AskComb{
-    /**
-     * demande une combinaison à n chiffres
-     */
 
     int n;
 
