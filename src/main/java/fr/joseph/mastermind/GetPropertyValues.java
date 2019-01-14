@@ -1,4 +1,4 @@
-package logikGames;
+package fr.joseph.mastermind;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
