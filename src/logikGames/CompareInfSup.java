@@ -1,8 +1,8 @@
-package mastermind;
+package logikGames;
 import java.util.Arrays;
 
 public class CompareInfSup {
-    /**
+    /** pour la recherche +/-
      * compare tirage de l'ordinateur avec la proposition de l'utilisateur
      * @param combinaison
      * @param proposition

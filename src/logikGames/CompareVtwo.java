@@ -1,4 +1,4 @@
-package mastermind;
+package logikGames;
 
 
 public class CompareVtwo {
@@ -18,7 +18,7 @@ public class CompareVtwo {
         return marked1;
     }
 
-    /**
+    /**Pour le jeu mastermind
      * Compare la combinaison avec la proposition
      * @param combinaison
      * @param proposition

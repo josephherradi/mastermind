@@ -1,4 +1,4 @@
-package mastermind;
+package logikGames;
 
 public class LaunchGame {
 

@@ -1,9 +1,14 @@
-package mastermind;
+package logikGames;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class StartChallengerMode {
+    static final Logger logger = LogManager.getLogger(Logger.class.getName());
+
+
     /**
      * Challenger mode de la recherche +/-
      * Le joueur devine la combinaison secrète de l'IA
@@ -25,6 +30,10 @@ public class StartChallengerMode {
     public boolean isEqualNtry() {
         return equalNtry;
     }
+
+
+
+
 
 
     public void challengeMode(int n, int m, int nMaxTry) {
@@ -62,6 +71,9 @@ public class StartChallengerMode {
             System.out.println("La combinaison était");
             System.out.println(resultFcombi);
         }
+        logger.info("Start of setUp");
+
 
     }
+
 }
