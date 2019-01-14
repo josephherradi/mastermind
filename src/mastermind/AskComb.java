@@ -2,9 +2,7 @@ package mastermind;
 
 import java.util.Scanner;
 
-/**
- *
- *
+/** permet la saisie d'une combinaison du joueur
  */
 
 class AskComb{

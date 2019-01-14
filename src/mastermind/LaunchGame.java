@@ -9,6 +9,18 @@ public class LaunchGame {
 
     }
 
+    /**
+     * Jeu n°1 Recherche +/-
+     * @param mode
+     *          Challenger, defender ou duel
+     * @param n
+     *          nombre de chiffres de la combinaison
+     * @param m
+     *          chiffre max pour le tirage
+     * @param nMaxTry
+     *          nombre de coups
+     */
+
     public void startGame1(char mode,int n, int m, int nMaxTry){
 
              if (mode == '1') {
@@ -21,11 +33,22 @@ public class LaunchGame {
 
             } else if (mode == '3') {
                 StartDuelMode startDuelMode = new StartDuelMode(n, m, nMaxTry);
-                startDuelMode.duelMode1(n, m, nMaxTry);
+                startDuelMode.duelMode1(n, m);
 
             }
 
     };
+    /**
+     * Jeu n°2 Mastermind
+     * @param mode
+     *          Challenger, defender ou duel
+     * @param n
+     *          nombre de chiffres de la combinaison
+     * @param m
+     *          chiffre max pour le tirage
+     * @param nMaxTry
+     *          nombre de coups
+     */
 
     public void startGame2(char mode,int n, int m, int nMaxTry){
 
@@ -39,7 +62,7 @@ public class LaunchGame {
 
             } else if (mode == '3') {
                 StartDuelMode startDuelMode = new StartDuelMode(n, m, nMaxTry);
-                startDuelMode.duelMode2(n, m, nMaxTry);
+                startDuelMode.duelMode2(n, m);
 
             }
     }

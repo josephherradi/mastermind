@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Duel Mode: Le joueur et l'IA jouent tour à tour
+ * et le premier qui a deviné la combinaison de l'autre a gagné
+ */
+
 public class StartDuelMode {
     int n;
     int m;
@@ -16,8 +21,14 @@ public class StartDuelMode {
         this.nMaxTry = nMaxTry;
     }
 
-
-    public void duelMode1(int n, int m, int nMaxTry) {
+    /**
+     * Duel Mode de la Recherche +/-
+     * @param n
+     *          n chiffres de la combinaisons
+     * @param m
+     *          chiffre max tiré
+     */
+    public void duelMode1(int n, int m) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
@@ -46,9 +57,12 @@ public class StartDuelMode {
             int[] resultPropos1 = askComb.AskN();
 
             String[] resultCompare1 = compareInfSup.compare(resultCombi1, resultPropos1);
+            System.out.println(Arrays.toString(resultCompare1));
+
             resultTryGamer = compareInfSup.resGame(resultCompare1);
 
             if(!resultTryGamer){
+                this.promptEnterKey();
 
             System.out.print("Proposition de l'ordinateur ");
             resultPropos2 = this.smartCombiGen(resultCompare2, resultPropos2);
@@ -56,14 +70,22 @@ public class StartDuelMode {
             System.out.println(resultFPropos2);
 
             resultCompare2 = compareInfSup.compare(resultCombi2, resultPropos2);
+            System.out.println(Arrays.toString(resultCompare2));
+
             resultTryIA = compareInfSup.resGame(resultCompare2);}
             this.resultGame(resultTryGamer,resultTryIA);
         } while (!(resultTryGamer ^ resultTryIA));
 
     }
 
-
-    public void duelMode2(int n, int m, int nMaxTry) {
+    /**
+     * Duel Mode du Mastermind
+     * @param n
+     *          n chiffres de la combinaison
+     * @param m
+     *          chiffre max pour le tirage
+     */
+    public void duelMode2(int n, int m) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
@@ -96,9 +118,13 @@ public class StartDuelMode {
             int[] resultPropos1 = askComb.AskN();
 
             result1 = compareVtwoGamer.compareVtwo(resultCombi1, resultPropos1);
+            compareVtwoGamer.showResult(result1);
+
             resultTryGamer = compareVtwoGamer.resGame2(result1);
 
             if(!resultTryGamer){
+                this.promptEnterKey();
+
 
                 System.out.print("Proposition de l'ordinateur ");
 
@@ -108,6 +134,8 @@ public class StartDuelMode {
 
                 result2 = compareVtwoIA.compareVtwo(resultCombi2, resultPropos2);
                 marked=compareVtwoIA.getMarked1();
+                compareVtwoIA.showResult(result2);
+
 
                 resultTryIA = compareVtwoIA.resGame2(result2);}
 
@@ -116,7 +144,14 @@ public class StartDuelMode {
 
     }
 
-
+    /**
+     * Donne le résultat du Duel Mode lorsque le premier a deviné
+     * la combinaison de l'autre
+     * @param resultTryGamer
+     *          booleen résultat du coup du joueur
+     * @param resultTryIA
+     *          booleen résultat du coup de l'IA
+     */
     public void resultGame(boolean resultTryGamer, boolean resultTryIA) {
         if (resultTryGamer && !resultTryIA) {
             System.out.println("Bravo le joueur a gagné!");
@@ -125,12 +160,29 @@ public class StartDuelMode {
         }
     }
 
+    /** Dans le duel mode de la recherche +/-, pour la partie defender
+     * Tirage "intelligent" en ajustant les bornes du tirage
+     * @param p
+     *          borne inférieure pour le tirage du chiffre
+     * @param m2
+     *          borne supérieure pour le tirage du chiffre
+     * @return
+     */
 
     private int smartPickN(int p, int m2) {
 
         return p + (int) (Math.random() * m2);
     }
 
+    /** Dans le duel mode de la recherche +/-, pour la partie defender
+     * Génère une combinaison intelligente en utilisant le tableau de comparaison
+     * entre la combinaison secrète et la proposition
+     * @param resultCompare
+     * @param resultPropos
+     * @return smartPropos
+     *          si le chiffre est bien deviné, il est gardé
+     *          sinon on "smartPick" en ajustant les bornes du tirage
+     */
     public int[] smartCombiGen(String[] resultCompare, int[] resultPropos) {
         int[] smartPropos = new int[n];
         for (int i = 0; i < n; i++) {
@@ -151,12 +203,31 @@ public class StartDuelMode {
         return smartPropos;
 
     }
-
+    /**
+     *Dans le duel mode mastermind, pour la partie defender
+     * Tirage d'un chiffre aléatoire
+     * @return
+     *         chiffre aléatoire tiré entre 1 et m
+     */
 
     private int PickN() {
 
         return 1 + (int) (Math.random() * m);
     }
+
+    /**
+     *Dans le duel mode mastermind, pour la partie defender
+     * @param marked
+     *          tableau de booleen marked indiquant les chiffres présents et bien placés
+     * @param resultPropos
+     *          proposition précédente de l'IA
+     * @return
+     *          tire une nouvelle proposition
+     *          (si un chiffre est bien deviné, il est gardé
+     *          sinon nouveau tirage)
+     */
+
+
     public int[] smartCombiGen2(boolean[] marked,int[] resultPropos) {
         int[] smartPropos = new int[n];
         for (int i = 0; i < n; i++) {
@@ -168,6 +239,12 @@ public class StartDuelMode {
 
         }
         return smartPropos;
+    }
+
+    public void promptEnterKey(){
+        System.out.println("Appuyez sur entrée pour continuer...");
+        Scanner prompt = new Scanner(System.in);
+        prompt.nextLine();
     }
 
 

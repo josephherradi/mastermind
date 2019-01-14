@@ -5,6 +5,12 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Defender mode de la recherche +/-
+ * L'IA devine la combinaison secrète du joueur en
+ * nMaxTry coups
+ * L'IA utilise les indications +/-/= pour tirer des nouvelles propositions
+ */
 
 public class StartDefenderMode {
     int n;
@@ -54,6 +60,7 @@ public class StartDefenderMode {
             System.out.println(resultFPropos);
 
             resultCompare = compareInfSup.compare(resultCombi, resultPropos);
+            System.out.println(Arrays.toString(resultCompare));
             boolean resultTry = compareInfSup.resGame(resultCompare);
             equalNtry = resultTry;
 
@@ -72,10 +79,29 @@ public class StartDefenderMode {
 
     }
 
+    /**
+     * Tirage "intelligent" en ajustant les bornes du tirage
+     * @param p
+     *          borne inférieure pour le tirage du chiffre
+     * @param m2
+     *          borne supérieure pour le tirage du chiffre
+     * @return
+     */
+
     private int smartPickN(int p ,int m2) {
 
         return p + (int) (Math.random() * m2);
     }
+
+    /**
+     * Génère une combinaison intelligente en utilisant le tableau de comparaison
+     * entre la combinaison secrète et la proposition
+     * @param resultCompare
+     * @param resultPropos
+     * @return smartPropos
+     *          si le chiffre est bien deviné, il est gardé
+     *          sinon on "smartPick" en ajustant les bornes du tirage
+     */
 
     public int[] smartCombiGen(String[] resultCompare, int[] resultPropos) {
         int[] smartPropos = new int[n];

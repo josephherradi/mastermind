@@ -1,6 +1,5 @@
 package mastermind;
 
-import java.util.Arrays;
 
 public class CompareVtwo {
 
@@ -18,6 +17,15 @@ public class CompareVtwo {
     public boolean[] getMarked1() {
         return marked1;
     }
+
+    /**
+     * Compare la combinaison avec la proposition
+     * @param combinaison
+     * @param proposition
+     * @return result
+     *          result[0]:le nombre de chiffres présents et bien placés
+     *          result[1]: le nombre de chiffres présents et mal placés
+     */
 
 
 
@@ -62,6 +70,13 @@ public class CompareVtwo {
         return result;
     }
 
+    /**
+     * Résulat du coup joué
+     * @param result
+     * @return success
+     *         booléen qui donne le résultat du coup  true si n chiffres de la combinaison secrete
+     *         sont présents et bien devinés
+     */
 
     public boolean resGame2(int[] result){
         boolean success=false;

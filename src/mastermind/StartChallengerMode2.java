@@ -4,6 +4,13 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Challenger mode du mastermind
+ * Le joueur devine la combinaison de l'IA en nMaxTry coups
+ * L'IA indique le nombre de chiffres présents et bien placés
+ * et le nombre de chiffres présents et pas bien placés
+ */
+
 public class StartChallengerMode2 {
     int n;
     int m;
@@ -48,6 +55,7 @@ public class StartChallengerMode2 {
             System.out.print(" chiffres de votre proposition ");
             int[] resultPropos = askComb.AskN();
             int[] resultCompare = compareVtwo.compareVtwo(resultCombi, resultPropos);
+
             boolean resultTry = compareVtwo.resGame2(resultCompare);
             System.out.println("");
             compareVtwo.showResult(resultCompare);

@@ -4,7 +4,12 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class StartChallengerMode {
-
+    /**
+     * Challenger mode de la recherche +/-
+     * Le joueur devine la combinaison secrète de l'IA
+     * en nMaxTry coups
+     * L'IA donne les indiquations +/-/= au joueur
+     */
     int n;
     int m;
     int nMaxTry;
@@ -20,6 +25,7 @@ public class StartChallengerMode {
     public boolean isEqualNtry() {
         return equalNtry;
     }
+
 
     public void challengeMode(int n, int m, int nMaxTry) {
         int nTry = 0;
@@ -41,6 +47,8 @@ public class StartChallengerMode {
 
             int[] resultPropos = askComb.AskN();
             String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
+            System.out.println(Arrays.toString(resultCompare));
+
             boolean resultTry = compareInfSup.resGame(resultCompare);
             equalNtry=resultTry;
         } while (!equalNtry && (nTry < nMaxTry));

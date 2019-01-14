@@ -5,6 +5,13 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Defender mode du mastermind
+ * L'IA devine la combinaison secrète du joueur en nMaxTry coups.
+ * Si un chiffre tiré est présent et bien placé, il est gardé
+ * sinon nouveau tirage
+ */
+
 public class StartDefenderMode2 {
     int n;
     int m;
@@ -52,8 +59,8 @@ public class StartDefenderMode2 {
 
             result = compareVtwo.compareVtwo(resultCombi, resultPropos);
 
+            // tableau de booleen marked indiquant les chiffres présents et bien placés
             marked=compareVtwo.getMarked1();
-            System.out.println(Arrays.toString(marked));
 
             compareVtwo.showResult(result);
             boolean resultTry = compareVtwo.resGame2(result);
@@ -74,13 +81,31 @@ public class StartDefenderMode2 {
 
     }
 
-
+    /**
+     * Tirage d'un chiffre aléatoire
+     * @return
+     *         chiffre aléatoire tiré entre 1 et m
+     */
 
 
     private int PickN() {
 
         return 1 + (int) (Math.random() * m);
     }
+
+
+    /**
+     *
+     * @param marked
+     *          tableau de booleen marked indiquant les chiffres présents et bien placés
+     * @param resultPropos
+     *          proposition précédente de l'IA
+     * @return
+     *          tire une nouvelle proposition
+     *          (si un chiffre est bien deviné, il est gardé
+     *          sinon nouveau tirage)
+     */
+
     public int[] smartCombiGen2(boolean[] marked,int[] resultPropos) {
         int[] smartPropos = new int[n];
         for (int i = 0; i < n; i++) {

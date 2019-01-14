@@ -4,8 +4,12 @@ import java.util.Arrays;
 public class CompareInfSup {
     /**
      * compare tirage de l'ordinateur avec la proposition de l'utilisateur
-     * en indiquant  +/-/= en sortie
+     * @param combinaison
+     * @param proposition
+     * @return resCompare
+     *         tableau de comparaison des combinaisons indiquant +/-/=
      */
+
     int n;
 
     public CompareInfSup(int n) {
@@ -31,6 +35,13 @@ public class CompareInfSup {
         }
         return resCompare;
     }
+
+    /**
+     * Résultat du coup joué
+     * @param resCompare
+     * @return equaltst
+     *         booléen si la combinaison correspond à la proposition
+     */
 
     public boolean resGame(String[] resCompare) {
 
