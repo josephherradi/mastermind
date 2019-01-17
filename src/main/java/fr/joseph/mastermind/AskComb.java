@@ -8,6 +8,7 @@ import java.util.Scanner;
 class AskComb{
 
     int n;
+    String saisie;
 
     public AskComb(int n) {
         this.n = n;
@@ -16,8 +17,12 @@ class AskComb{
     public int [] AskN() {
 
         Scanner scanner = new Scanner(System.in);
-
-        String saisie = scanner.next();
+        do {
+             saisie = scanner.next();
+             if(saisie.length()!=n){
+              System.out.println("nombre de chiffres incorrects, saisissez "+n+" chiffres");
+             }
+        }while (saisie.length()!=n);
 
         int[] proposition= new int[saisie.length()];
 

@@ -24,12 +24,8 @@ public class StartChallengerMode {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
-        this.equalNtry=equalNtry;
     }
 
-    public boolean isEqualNtry() {
-        return equalNtry;
-    }
 
 
 
@@ -55,6 +51,7 @@ public class StartChallengerMode {
             System.out.print(" chiffres de votre proposition ");
 
             int[] resultPropos = askComb.AskN();
+
             String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
             System.out.println(Arrays.toString(resultCompare));
 
