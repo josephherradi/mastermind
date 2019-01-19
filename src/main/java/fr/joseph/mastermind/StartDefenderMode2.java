@@ -23,16 +23,12 @@ public class StartDefenderMode2 {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
-        this.equalNtry=equalNtry;
     }
 
-    public boolean isEqualNtry() {
-        return equalNtry;
-    }
 
-    public void defenderMode2(int n, int m, int nMaxTry) {
+    public void defenderMode2(int n, int m, int nMaxTry,boolean dev) {
         int nTry = 0;
-        System.out.print("Entrez les " + n + " chiffres de la combinaison ");
+        System.out.print("Entrez les " + n + " chiffres de la combinaison du joueur ");
 
         AskComb askComb = new AskComb(n);
         int[] resultCombi = askComb.AskN();
@@ -41,6 +37,7 @@ public class StartDefenderMode2 {
         System.out.println(resultFCombi);
 
         boolean[] marked= new boolean[n];
+
         int[] resultPropos= new int[n];
         Arrays.fill(resultPropos,0);
         int[] result= new int[2];
@@ -49,6 +46,7 @@ public class StartDefenderMode2 {
 
 
         do {
+
             nTry++;
             this.promptEnterKey();
 
@@ -61,7 +59,6 @@ public class StartDefenderMode2 {
 
             // tableau de booleen marked indiquant les chiffres présents et bien placés
             marked=compareVtwo.getMarked1();
-
             compareVtwo.showResult(result);
             boolean resultTry = compareVtwo.resGame2(result);
             equalNtry = resultTry;

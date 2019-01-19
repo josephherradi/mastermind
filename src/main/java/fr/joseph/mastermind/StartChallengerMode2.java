@@ -1,5 +1,6 @@
 package fr.joseph.mastermind;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -15,29 +16,30 @@ public class StartChallengerMode2 {
     int m;
     int nMaxTry;
     boolean equalNtry=true;
+    boolean dev=true;
 
 
 
-    public StartChallengerMode2(int n, int m, int nMaxTry) {
+    public StartChallengerMode2(int n, int m, int nMaxTry, boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
-        this.equalNtry=equalNtry;
+        this.dev=dev;
 
     }
 
-    public boolean isEqualNtry() {
-        return equalNtry;
-    }
 
-    public void challengeMode2(int n, int m, int nMaxTry) {
+    public void challengeMode2(int n, int m, int nMaxTry, boolean dev) {
         int nTry = 0;
+        boolean[] marked= new boolean[n];
 
 
         NumberGen numberGen = new NumberGen(n, m);
         int[] resultCombi = numberGen.combiGen();
         String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(resultFcombi);
+
+        if(dev){
+        System.out.println("Combinaison de l'IA "+resultFcombi);}
 
 
 
@@ -54,7 +56,6 @@ public class StartChallengerMode2 {
             System.out.print(" chiffres de votre proposition ");
             int[] resultPropos = askComb.AskN();
             int[] resultCompare = compareVtwo.compareVtwo(resultCombi, resultPropos);
-
             boolean resultTry = compareVtwo.resGame2(resultCompare);
             System.out.println("");
             compareVtwo.showResult(resultCompare);

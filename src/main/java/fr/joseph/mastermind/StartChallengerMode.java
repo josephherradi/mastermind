@@ -19,11 +19,13 @@ public class StartChallengerMode {
     int m;
     int nMaxTry;
     boolean equalNtry=true;
+    boolean dev=true;
 
-    public StartChallengerMode(int n, int m, int nMaxTry) {
+    public StartChallengerMode(int n, int m, int nMaxTry, boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
+        this.dev=dev;
     }
 
 
@@ -32,13 +34,14 @@ public class StartChallengerMode {
 
 
 
-    public void challengeMode(int n, int m, int nMaxTry) {
+    public void challengeMode(int n, int m, int nMaxTry, boolean dev) {
         int nTry = 0;
 
         NumberGen numberGen = new NumberGen(n, m);
         int[] resultCombi = numberGen.combiGen();
         String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(resultFcombi);
+        if(dev){
+        System.out.println("Combinaison de l'IA "+resultFcombi);}
 
         AskComb askComb = new AskComb(n);
         CompareInfSup compareInfSup = new CompareInfSup(n);

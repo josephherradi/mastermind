@@ -13,15 +13,20 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int m = 9;
 
         GetPropertyValues propertyValues= new GetPropertyValues();
         propertyValues.getPropValues();
         int n=propertyValues.getN();
         int nMaxTry= propertyValues.getnMaxTry();
+        int m=propertyValues.getM();
+        boolean dev=propertyValues.isDev();
+
 
         System.out.println("n= "+n);
         System.out.println("nMaxTry "+nMaxTry);
+        System.out.println("m= "+m);
+        System.out.println("dev= "+dev);
+
 
 
         char mode = ' ', game = ' ', reponse1 = ' ', reponse2 = '2';
@@ -52,13 +57,13 @@ public class Main {
                 } while (mode != '1' && mode != '2' && mode != '3');
 
                 if (game == '1') {
-                    LaunchGame launchGame = new LaunchGame(mode);
-                    launchGame.startGame1(mode, n, m, nMaxTry);
+                    LaunchGame launchGame = new LaunchGame(mode,dev);
+                    launchGame.startGame1(mode, n, m, nMaxTry,dev);
 
 
                 } else if (game == '2') {
-                    LaunchGame launchGame = new LaunchGame(mode);
-                    launchGame.startGame2(mode, n, m, nMaxTry);
+                    LaunchGame launchGame = new LaunchGame(mode,dev);
+                    launchGame.startGame2(mode, n, m, nMaxTry,dev);
 
                 }
 
@@ -66,13 +71,13 @@ public class Main {
 
 
                 if (game == '1') {
-                    LaunchGame launchGame = new LaunchGame(mode);
-                    launchGame.startGame1(mode, n, m, nMaxTry);
+                    LaunchGame launchGame = new LaunchGame(mode,dev);
+                    launchGame.startGame1(mode, n, m, nMaxTry,dev);
 
 
                 } else if (game == '2') {
-                    LaunchGame launchGame = new LaunchGame(mode);
-                    launchGame.startGame2(mode, n, m, nMaxTry);
+                    LaunchGame launchGame = new LaunchGame(mode,dev);
+                    launchGame.startGame2(mode, n, m, nMaxTry,dev);
 
                 }
             }

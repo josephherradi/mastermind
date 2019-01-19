@@ -11,6 +11,8 @@ public class GetPropertyValues {
     InputStream inputStream;
     int n;
     int nMaxTry;
+    int m;
+    boolean dev;
 
 
     public GetPropertyValues(){
@@ -25,6 +27,13 @@ public class GetPropertyValues {
         return nMaxTry;
     }
 
+    public int getM() {
+        return m;
+    }
+
+    public boolean isDev() {
+        return dev;
+    }
 
     public  void getPropValues() throws IOException {
 
@@ -45,9 +54,14 @@ public class GetPropertyValues {
 
             String n1 = prop.getProperty("n");
             String nMaxTry1 = prop.getProperty("nMaxTry");
+            String m1 = prop.getProperty("m");
+            String dev1 = prop.getProperty("dev");
+
+
             n = Integer.parseInt(n1);
             nMaxTry = Integer.parseInt(nMaxTry1);
-
+            m=Integer.parseInt(m1);
+            dev=Boolean.parseBoolean(dev1);
 
                     } catch (Exception e) {
             System.out.println("Exception: " + e);

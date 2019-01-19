@@ -23,17 +23,13 @@ public class StartDefenderMode {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
-        this.equalNtry=equalNtry;
 
     }
 
-    public boolean isEqualNtry() {
-        return equalNtry;
-    }
 
     public void defenderMode(int n, int m, int nMaxTry) {
         int nTry = 0;
-        System.out.print("Entrez les " + n + " chiffres de la combinaison ");
+        System.out.print("Entrez les " + n + " chiffres de la combinaison du joueur ");
 
         AskComb askComb = new AskComb(n);
         int[] resultCombi = askComb.AskN();

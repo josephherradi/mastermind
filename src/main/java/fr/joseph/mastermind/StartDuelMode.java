@@ -14,11 +14,14 @@ public class StartDuelMode {
     int n;
     int m;
     int nMaxTry;
+    boolean dev=false;
 
-    public StartDuelMode(int n, int m, int nMaxTry) {
+
+    public StartDuelMode(int n, int m, int nMaxTry,boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
+        this.dev=dev;
     }
 
     /**
@@ -28,20 +31,21 @@ public class StartDuelMode {
      * @param m
      *          chiffre max tiré
      */
-    public void duelMode1(int n, int m) {
+    public void duelMode1(int n, int m, boolean dev) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
         CompareInfSup compareInfSup = new CompareInfSup(n);
 
-
         int[] resultCombi1 = numberGen.combiGen();
         String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println("Combinaison de l'IA " + resultFcombi1);
-        System.out.println("Entrez la combinaison du joueur");
+        if(dev){
+            System.out.println("Combinaison de secrète l'IA " + resultFcombi1);}
+
+        System.out.println("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
         String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println("Combinaison du joueur " + resultFCombi2);
+        System.out.println("Combinaison secrète du joueur " + resultFCombi2);
 
         // initialisation variables defender
 
@@ -85,7 +89,7 @@ public class StartDuelMode {
      * @param m
      *          chiffre max pour le tirage
      */
-    public void duelMode2(int n, int m) {
+    public void duelMode2(int n, int m, boolean dev) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
@@ -96,11 +100,12 @@ public class StartDuelMode {
 
         int[] resultCombi1 = numberGen.combiGen();
         String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println("Combinaison de l'IA " + resultFcombi1);
-        System.out.println("Entrez la combinaison du joueur");
+       if(dev){
+        System.out.println("Combinaison secrète de l'IA " + resultFcombi1);}
+        System.out.println("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
         String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println("Combinaison du joueur " + resultFCombi2);
+        System.out.println("Combinaison secrète du joueur " + resultFCombi2);
 
         // initialisation variables defender
 

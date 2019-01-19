@@ -18,6 +18,10 @@ public class CompareVtwo {
         return marked1;
     }
 
+    public boolean[] getMarked2() {
+        return marked2;
+    }
+
     /**Pour le jeu mastermind
      * Compare la combinaison avec la proposition
      * @param combinaison
@@ -62,8 +66,6 @@ public class CompareVtwo {
                 }
             }
         }
- /*       System.out.println("Position des chiffres présents et bien placés "+Arrays.toString(marked1));
-        System.out.println("Position des chiffres présents et mal placés "+Arrays.toString(marked2));*/
 
         result[0] = nb1;
         result[1] = nb2;
