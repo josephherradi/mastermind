@@ -1,5 +1,8 @@
 package fr.joseph.mastermind;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -13,6 +16,8 @@ import java.util.stream.IntStream;
  */
 
 public class StartDefenderMode {
+    static final Logger logger = LogManager.getLogger(Logger.class.getName());
+
     int n;
     int m;
     int nMaxTry;
@@ -30,11 +35,13 @@ public class StartDefenderMode {
     public void defenderMode(int n, int m, int nMaxTry) {
         int nTry = 0;
         System.out.print("Entrez les " + n + " chiffres de la combinaison du joueur ");
+        logger.info("Entrez les " + n + " chiffres de la combinaison du joueur ");
 
         AskComb askComb = new AskComb(n);
         int[] resultCombi = askComb.AskN();
 
         String resultFCombi = IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        logger.info(resultFCombi);
 //        System.out.println(resultFCombi);
 
         String[] resultCompare= new String[n];
@@ -52,11 +59,14 @@ public class StartDefenderMode {
 
             resultPropos = this.smartCombiGen(resultCompare,resultPropos);
             System.out.print("Proposition de l'ordinateur ");
+            logger.info("Proposition de l'ordinateur ");
             String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
             System.out.println(resultFPropos);
+            logger.info(resultFPropos);
 
             resultCompare = compareInfSup.compare(resultCombi, resultPropos);
             System.out.println(Arrays.toString(resultCompare));
+            logger.info(Arrays.toString(resultCompare));
             boolean resultTry = compareInfSup.resGame(resultCompare);
             equalNtry = resultTry;
 
@@ -66,11 +76,15 @@ public class StartDefenderMode {
         if (equalNtry) {
             System.out.print("Success ! L'ordinateur a trouvé la combinaison en ");
             System.out.print(nTry);
-            System.out.println(" essais");
+            System.out.println("essais");
+            logger.info("Success ! L'ordinateur a trouvé la combinaison en ");
+            logger.info(nTry+" essais");
         } else {
             System.out.println("Fail :( ");
             System.out.println("La combinaison était");
             System.out.println(resultFCombi);
+            logger.info("Fail :( ");
+            logger.info("La combinaison était "+resultFCombi);
         }
 
     }
@@ -122,6 +136,7 @@ public class StartDefenderMode {
     }
     public void promptEnterKey(){
         System.out.println("Appuyez sur entrée pour continuer...");
+        logger.info("Appuyez sur entrée pour continuer...");
         Scanner prompt = new Scanner(System.in);
         prompt.nextLine();
     }

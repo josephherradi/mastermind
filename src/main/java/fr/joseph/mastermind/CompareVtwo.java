@@ -1,7 +1,12 @@
 package fr.joseph.mastermind;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CompareVtwo {
+    static final Logger logger = LogManager.getLogger(Logger.class.getName());
+
 
     int n;
     boolean[] marked1;
@@ -91,6 +96,8 @@ public class CompareVtwo {
     public void showResult(int[] result) {
         System.out.println(result[0]+" chiffres bien présents et bien placés");
         System.out.println(result[1]+" chiffres bien présents et mal placés");
+        logger.info(result[0]+" chiffres bien présents et bien placés");
+        logger.info(result[1]+" chiffres bien présents et mal placés");
 
     }
 

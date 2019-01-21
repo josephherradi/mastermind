@@ -1,5 +1,8 @@
 package fr.joseph.mastermind;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -11,6 +14,8 @@ import java.util.stream.IntStream;
  */
 
 public class StartDuelMode {
+    static final Logger logger = LogManager.getLogger(Logger.class.getName());
+
     int n;
     int m;
     int nMaxTry;
@@ -40,12 +45,16 @@ public class StartDuelMode {
         int[] resultCombi1 = numberGen.combiGen();
         String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         if(dev){
-            System.out.println("Combinaison de secrète l'IA " + resultFcombi1);}
+            System.out.println("Combinaison de secrète l'IA " + resultFcombi1);
+            logger.info("Combinaison de secrète l'IA " + resultFcombi1);
+        }
 
         System.out.println("Entrez la combinaison secrète du joueur");
+        logger.info("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
         String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("Combinaison secrète du joueur " + resultFCombi2);
+        logger.info("Combinaison secrète du joueur " + resultFCombi2);
 
         // initialisation variables defender
 
@@ -58,10 +67,15 @@ public class StartDuelMode {
         boolean resultTryIA=false;
         do {
             System.out.println("Proposition du joueur");
+            logger.info("Proposition du joueur");
             int[] resultPropos1 = askComb.AskN();
+            String resultFpropos1= IntStream.of(resultPropos1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+
+            logger.info(resultFpropos1);
 
             String[] resultCompare1 = compareInfSup.compare(resultCombi1, resultPropos1);
             System.out.println(Arrays.toString(resultCompare1));
+            logger.info(Arrays.toString(resultCompare1));
 
             resultTryGamer = compareInfSup.resGame(resultCompare1);
 
@@ -69,12 +83,15 @@ public class StartDuelMode {
                 this.promptEnterKey();
 
             System.out.print("Proposition de l'ordinateur ");
+            logger.info("Proposition de l'ordinateur ");
             resultPropos2 = this.smartCombiGen(resultCompare2, resultPropos2);
             String resultFPropos2 = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
             System.out.println(resultFPropos2);
+            logger.info(resultFPropos2);
 
             resultCompare2 = compareInfSup.compare(resultCombi2, resultPropos2);
             System.out.println(Arrays.toString(resultCompare2));
+            logger.info(Arrays.toString(resultCompare2));
 
             resultTryIA = compareInfSup.resGame(resultCompare2);}
             this.resultGame(resultTryGamer,resultTryIA);
@@ -101,11 +118,15 @@ public class StartDuelMode {
         int[] resultCombi1 = numberGen.combiGen();
         String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
        if(dev){
-        System.out.println("Combinaison secrète de l'IA " + resultFcombi1);}
+        System.out.println("Combinaison secrète de l'IA " + resultFcombi1);
+       logger.info("Combinaison secrète de l'IA " + resultFcombi1);
+       }
         System.out.println("Entrez la combinaison secrète du joueur");
+       logger.info("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
         String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("Combinaison secrète du joueur " + resultFCombi2);
+        logger.info("Combinaison secrète du joueur " + resultFCombi2);
 
         // initialisation variables defender
 
@@ -120,7 +141,11 @@ public class StartDuelMode {
         boolean resultTryIA=false;
         do {
             System.out.println("Proposition du joueur");
+            logger.info("Proposition du joueur");
             int[] resultPropos1 = askComb.AskN();
+            String resultFpropos1= IntStream.of(resultPropos1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+
+            logger.info(resultFpropos1);
 
             result1 = compareVtwoGamer.compareVtwo(resultCombi1, resultPropos1);
             compareVtwoGamer.showResult(result1);
@@ -132,10 +157,12 @@ public class StartDuelMode {
 
 
                 System.out.print("Proposition de l'ordinateur ");
+                logger.info("Proposition de l'ordinateur ");
 
                 resultPropos2 = this.smartCombiGen2(marked, resultPropos2);
                 String resultFPropos2 = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
                 System.out.println(resultFPropos2);
+                logger.info(resultFPropos2);
 
                 result2 = compareVtwoIA.compareVtwo(resultCombi2, resultPropos2);
                 marked=compareVtwoIA.getMarked1();
@@ -160,8 +187,10 @@ public class StartDuelMode {
     public void resultGame(boolean resultTryGamer, boolean resultTryIA) {
         if (resultTryGamer && !resultTryIA) {
             System.out.println("Bravo le joueur a gagné!");
+            logger.info("Bravo le joueur a gagné!");
         } else if (resultTryIA && !resultTryGamer) {
             System.out.println("L'IA a gagné :(");
+            logger.info("L'IA a gagné :(");
         }
     }
 
@@ -248,6 +277,7 @@ public class StartDuelMode {
 
     public void promptEnterKey(){
         System.out.println("Appuyez sur entrée pour continuer...");
+        logger.info("Appuyez sur entrée pour continuer...");
         Scanner prompt = new Scanner(System.in);
         prompt.nextLine();
     }

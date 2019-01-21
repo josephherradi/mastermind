@@ -41,7 +41,9 @@ public class StartChallengerMode {
         int[] resultCombi = numberGen.combiGen();
         String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
         if(dev){
-        System.out.println("Combinaison de l'IA "+resultFcombi);}
+        System.out.println("Combinaison de l'IA "+resultFcombi);
+            logger.info("Combinaison de l'IA "+resultFcombi);
+        }
 
         AskComb askComb = new AskComb(n);
         CompareInfSup compareInfSup = new CompareInfSup(n);
@@ -52,11 +54,16 @@ public class StartChallengerMode {
             nTry++;
             System.out.print("Entrez les "+n);
             System.out.print(" chiffres de votre proposition ");
+            logger.info("Entrez les "+n);
+            logger.info("chiffres de votre proposition ");
 
             int[] resultPropos = askComb.AskN();
+            String resultFpropos= IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
 
+            logger.info("Proposition "+nTry+": "+resultFpropos);
             String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
             System.out.println(Arrays.toString(resultCompare));
+            logger.info(Arrays.toString(resultCompare));
 
             boolean resultTry = compareInfSup.resGame(resultCompare);
             equalNtry=resultTry;
@@ -66,12 +73,15 @@ public class StartChallengerMode {
             System.out.print("Success ! Vous avez trouvé la combinaison en ");
             System.out.print(nTry);
             System.out.println(" essais");
+            logger.info("Success ! Vous avez trouvé la combinaison en ");
+            logger.info(nTry+" essais");
         } else {
             System.out.println("Fail :( ");
             System.out.println("La combinaison était");
             System.out.println(resultFcombi);
+            logger.info("Fail :(");
+            logger.info("La combinaison était "+resultFcombi);
         }
-        logger.info("Start of setUp");
 
 
     }

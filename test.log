@@ -1,0 +1,237 @@
+2019-01-21 10:45:53.450 - n= 4
+2019-01-21 10:45:53.454 - nMaxTry 4
+2019-01-21 10:45:53.454 - m= 9
+2019-01-21 10:45:53.454 - dev= true
+2019-01-21 10:45:53.454 - Choisissez le jeu souhaité:
+2019-01-21 10:45:53.454 - 1- Recherche +/-
+2019-01-21 10:45:53.454 - 2- Mastermind
+2019-01-21 10:45:55.805 - jeu choisi 2
+2019-01-21 10:45:55.806 - Choisissez le mode du jeu:
+2019-01-21 10:45:55.806 - 1- Challenger
+2019-01-21 10:45:55.806 - 2- Defender
+2019-01-21 10:45:55.806 - 3- Duel
+2019-01-21 10:45:57.322 - Mode de jeu choisi 3
+2019-01-21 10:45:57.329 - Combinaison secrète de l'IA 9222
+2019-01-21 10:45:57.330 - Entrez la combinaison secrète du joueur
+2019-01-21 10:45:59.610 - Combinaison secrète du joueur 1234
+2019-01-21 10:45:59.610 - Proposition du joueur
+2019-01-21 10:46:03.140 - 1232
+2019-01-21 10:46:03.141 - 2 chiffres bien présents et bien placés
+2019-01-21 10:46:03.141 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:03.141 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:06.796 - Proposition de l'ordinateur 
+2019-01-21 10:46:06.796 - 7567
+2019-01-21 10:46:06.797 - 0 chiffres bien présents et bien placés
+2019-01-21 10:46:06.797 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:06.797 - Proposition du joueur
+2019-01-21 10:46:12.827 - 6532
+2019-01-21 10:46:12.827 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:12.827 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:12.827 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:15.402 - Proposition de l'ordinateur 
+2019-01-21 10:46:15.403 - 7261
+2019-01-21 10:46:15.403 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:15.403 - 1 chiffres bien présents et mal placés
+2019-01-21 10:46:15.403 - Proposition du joueur
+2019-01-21 10:46:21.148 - 7896
+2019-01-21 10:46:21.148 - 0 chiffres bien présents et bien placés
+2019-01-21 10:46:21.148 - 1 chiffres bien présents et mal placés
+2019-01-21 10:46:21.148 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:23.335 - Proposition de l'ordinateur 
+2019-01-21 10:46:23.335 - 8261
+2019-01-21 10:46:23.335 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:23.335 - 1 chiffres bien présents et mal placés
+2019-01-21 10:46:23.335 - Proposition du joueur
+2019-01-21 10:46:28.389 - 4896
+2019-01-21 10:46:28.389 - 0 chiffres bien présents et bien placés
+2019-01-21 10:46:28.390 - 1 chiffres bien présents et mal placés
+2019-01-21 10:46:28.390 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:30.251 - Proposition de l'ordinateur 
+2019-01-21 10:46:30.251 - 9297
+2019-01-21 10:46:30.252 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:30.252 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:30.252 - Proposition du joueur
+2019-01-21 10:46:33.030 - 7854
+2019-01-21 10:46:33.030 - 0 chiffres bien présents et bien placés
+2019-01-21 10:46:33.030 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:33.030 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:35.046 - Proposition de l'ordinateur 
+2019-01-21 10:46:35.046 - 7292
+2019-01-21 10:46:35.046 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:35.047 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:35.047 - Proposition du joueur
+2019-01-21 10:46:54.228 - 7852
+2019-01-21 10:46:54.228 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:54.228 - 0 chiffres bien présents et mal placés
+2019-01-21 10:46:54.228 - Appuyez sur entrée pour continuer...
+2019-01-21 10:46:56.479 - Proposition de l'ordinateur 
+2019-01-21 10:46:56.479 - 6213
+2019-01-21 10:46:56.480 - 1 chiffres bien présents et bien placés
+2019-01-21 10:46:56.480 - 2 chiffres bien présents et mal placés
+2019-01-21 10:46:56.480 - Proposition du joueur
+2019-01-21 10:47:03.036 - 7754
+2019-01-21 10:47:03.036 - 0 chiffres bien présents et bien placés
+2019-01-21 10:47:03.036 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:03.036 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:04.027 - Proposition de l'ordinateur 
+2019-01-21 10:47:04.027 - 9258
+2019-01-21 10:47:04.027 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:04.028 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:04.028 - Proposition du joueur
+2019-01-21 10:47:08.387 - 7854
+2019-01-21 10:47:08.388 - 0 chiffres bien présents et bien placés
+2019-01-21 10:47:08.388 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:08.388 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:09.242 - Proposition de l'ordinateur 
+2019-01-21 10:47:09.243 - 8251
+2019-01-21 10:47:09.243 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:09.243 - 1 chiffres bien présents et mal placés
+2019-01-21 10:47:09.243 - Proposition du joueur
+2019-01-21 10:47:12.500 - 4521
+2019-01-21 10:47:12.500 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:12.500 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:12.500 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:13.321 - Proposition de l'ordinateur 
+2019-01-21 10:47:13.321 - 4259
+2019-01-21 10:47:13.321 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:13.321 - 1 chiffres bien présents et mal placés
+2019-01-21 10:47:13.322 - Proposition du joueur
+2019-01-21 10:47:16.163 - 4521
+2019-01-21 10:47:16.163 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:16.163 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:16.163 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:16.834 - Proposition de l'ordinateur 
+2019-01-21 10:47:16.834 - 6285
+2019-01-21 10:47:16.834 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:16.834 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:16.834 - Proposition du joueur
+2019-01-21 10:47:19.625 - 4563
+2019-01-21 10:47:19.626 - 0 chiffres bien présents et bien placés
+2019-01-21 10:47:19.626 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:19.626 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:20.454 - Proposition de l'ordinateur 
+2019-01-21 10:47:20.454 - 1251
+2019-01-21 10:47:20.454 - 2 chiffres bien présents et bien placés
+2019-01-21 10:47:20.454 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:20.455 - Proposition du joueur
+2019-01-21 10:47:23.541 - 7896
+2019-01-21 10:47:23.541 - 0 chiffres bien présents et bien placés
+2019-01-21 10:47:23.541 - 1 chiffres bien présents et mal placés
+2019-01-21 10:47:23.541 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:25.149 - Proposition de l'ordinateur 
+2019-01-21 10:47:25.149 - 1217
+2019-01-21 10:47:25.149 - 2 chiffres bien présents et bien placés
+2019-01-21 10:47:25.149 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:25.149 - Proposition du joueur
+2019-01-21 10:47:32.814 - 4521
+2019-01-21 10:47:32.814 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:32.814 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:32.814 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:33.982 - Proposition de l'ordinateur 
+2019-01-21 10:47:33.982 - 1219
+2019-01-21 10:47:33.983 - 2 chiffres bien présents et bien placés
+2019-01-21 10:47:33.983 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:33.983 - Proposition du joueur
+2019-01-21 10:47:36.881 - 4521
+2019-01-21 10:47:36.881 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:36.881 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:36.881 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:37.489 - Proposition de l'ordinateur 
+2019-01-21 10:47:37.490 - 1287
+2019-01-21 10:47:37.490 - 2 chiffres bien présents et bien placés
+2019-01-21 10:47:37.490 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:37.490 - Proposition du joueur
+2019-01-21 10:47:44.954 - 4854
+2019-01-21 10:47:44.954 - 0 chiffres bien présents et bien placés
+2019-01-21 10:47:44.954 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:44.954 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:45.687 - Proposition de l'ordinateur 
+2019-01-21 10:47:45.688 - 1254
+2019-01-21 10:47:45.688 - 3 chiffres bien présents et bien placés
+2019-01-21 10:47:45.688 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:45.688 - Proposition du joueur
+2019-01-21 10:47:48.589 - 4521
+2019-01-21 10:47:48.589 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:48.589 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:48.589 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:49.282 - Proposition de l'ordinateur 
+2019-01-21 10:47:49.282 - 1214
+2019-01-21 10:47:49.282 - 3 chiffres bien présents et bien placés
+2019-01-21 10:47:49.283 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:49.283 - Proposition du joueur
+2019-01-21 10:47:51.826 - 4521
+2019-01-21 10:47:51.827 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:51.827 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:51.827 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:52.506 - Proposition de l'ordinateur 
+2019-01-21 10:47:52.507 - 1214
+2019-01-21 10:47:52.507 - 3 chiffres bien présents et bien placés
+2019-01-21 10:47:52.507 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:52.507 - Proposition du joueur
+2019-01-21 10:47:54.644 - 4521
+2019-01-21 10:47:54.644 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:54.644 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:54.644 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:55.192 - Proposition de l'ordinateur 
+2019-01-21 10:47:55.192 - 1214
+2019-01-21 10:47:55.193 - 3 chiffres bien présents et bien placés
+2019-01-21 10:47:55.193 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:55.193 - Proposition du joueur
+2019-01-21 10:47:57.173 - 4521
+2019-01-21 10:47:57.173 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:57.173 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:57.173 - Appuyez sur entrée pour continuer...
+2019-01-21 10:47:57.914 - Proposition de l'ordinateur 
+2019-01-21 10:47:57.914 - 1284
+2019-01-21 10:47:57.915 - 3 chiffres bien présents et bien placés
+2019-01-21 10:47:57.915 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:57.915 - Proposition du joueur
+2019-01-21 10:47:59.985 - 4521
+2019-01-21 10:47:59.985 - 1 chiffres bien présents et bien placés
+2019-01-21 10:47:59.985 - 0 chiffres bien présents et mal placés
+2019-01-21 10:47:59.985 - Appuyez sur entrée pour continuer...
+2019-01-21 10:48:00.645 - Proposition de l'ordinateur 
+2019-01-21 10:48:00.646 - 1244
+2019-01-21 10:48:00.646 - 3 chiffres bien présents et bien placés
+2019-01-21 10:48:00.646 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:00.646 - Proposition du joueur
+2019-01-21 10:48:02.603 - 4521
+2019-01-21 10:48:02.603 - 1 chiffres bien présents et bien placés
+2019-01-21 10:48:02.603 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:02.603 - Appuyez sur entrée pour continuer...
+2019-01-21 10:48:03.527 - Proposition de l'ordinateur 
+2019-01-21 10:48:03.528 - 1264
+2019-01-21 10:48:03.528 - 3 chiffres bien présents et bien placés
+2019-01-21 10:48:03.528 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:03.528 - Proposition du joueur
+2019-01-21 10:48:05.552 - 4521
+2019-01-21 10:48:05.553 - 1 chiffres bien présents et bien placés
+2019-01-21 10:48:05.553 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:05.553 - Appuyez sur entrée pour continuer...
+2019-01-21 10:48:06.241 - Proposition de l'ordinateur 
+2019-01-21 10:48:06.242 - 1264
+2019-01-21 10:48:06.242 - 3 chiffres bien présents et bien placés
+2019-01-21 10:48:06.242 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:06.242 - Proposition du joueur
+2019-01-21 10:48:08.181 - 4521
+2019-01-21 10:48:08.181 - 1 chiffres bien présents et bien placés
+2019-01-21 10:48:08.181 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:08.181 - Appuyez sur entrée pour continuer...
+2019-01-21 10:48:09.185 - Proposition de l'ordinateur 
+2019-01-21 10:48:09.185 - 1224
+2019-01-21 10:48:09.185 - 3 chiffres bien présents et bien placés
+2019-01-21 10:48:09.185 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:09.186 - Proposition du joueur
+2019-01-21 10:48:11.092 - 4521
+2019-01-21 10:48:11.092 - 1 chiffres bien présents et bien placés
+2019-01-21 10:48:11.093 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:11.093 - Appuyez sur entrée pour continuer...
+2019-01-21 10:48:11.664 - Proposition de l'ordinateur 
+2019-01-21 10:48:11.664 - 1234
+2019-01-21 10:48:11.664 - 4 chiffres bien présents et bien placés
+2019-01-21 10:48:11.664 - 0 chiffres bien présents et mal placés
+2019-01-21 10:48:11.664 - L'IA a gagné :(
+2019-01-21 10:48:11.665 - Souhaitez-vous  
+2019-01-21 10:48:11.665 - 1-rejouer?  
+2019-01-21 10:48:11.665 - 2-quitter?  
+2019-01-21 10:48:14.948 - Réponse 2

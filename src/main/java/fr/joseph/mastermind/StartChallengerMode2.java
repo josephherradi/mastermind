@@ -1,5 +1,8 @@
 package fr.joseph.mastermind;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -12,6 +15,8 @@ import java.util.stream.IntStream;
  */
 
 public class StartChallengerMode2 {
+    static final Logger logger = LogManager.getLogger(Logger.class.getName());
+
     int n;
     int m;
     int nMaxTry;
@@ -31,15 +36,15 @@ public class StartChallengerMode2 {
 
     public void challengeMode2(int n, int m, int nMaxTry, boolean dev) {
         int nTry = 0;
-        boolean[] marked= new boolean[n];
-
 
         NumberGen numberGen = new NumberGen(n, m);
         int[] resultCombi = numberGen.combiGen();
         String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
 
         if(dev){
-        System.out.println("Combinaison de l'IA "+resultFcombi);}
+        System.out.println("Combinaison de l'IA "+resultFcombi);
+        logger.info("Combinaison de l'IA "+resultFcombi);
+        }
 
 
 
@@ -54,7 +59,12 @@ public class StartChallengerMode2 {
             System.out.println("");
             System.out.print("Entrez les "+n);
             System.out.print(" chiffres de votre proposition ");
+            logger.info("Entrez les "+n);
+            logger.info("chiffres de votre proposition ");
             int[] resultPropos = askComb.AskN();
+            String resultFpropos= IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
+
+            logger.info("Proposition "+nTry+": "+resultFpropos);
             int[] resultCompare = compareVtwo.compareVtwo(resultCombi, resultPropos);
             boolean resultTry = compareVtwo.resGame2(resultCompare);
             System.out.println("");
@@ -65,12 +75,18 @@ public class StartChallengerMode2 {
         }while (!equalNtry && (nTry < nMaxTry));
 
         if (equalNtry) {
-            System.out.print("Success ! Vous avez trouvé la combinaison");
+            System.out.print("Success ! Vous avez trouvé la combinaison en ");
+            System.out.print(nTry);
+            System.out.println(" essais");
+            logger.info("Success ! Vous avez trouvé la combinaison en ");
+            logger.info(nTry+" essais");
 
         } else {
             System.out.println("Fail :( ");
             System.out.println("La combinaison était");
             System.out.println(resultFcombi);
+            logger.info("Fail :(");
+            logger.info("La combinaison était "+resultFcombi);
         }
 
     }
