@@ -4,7 +4,11 @@ package fr.joseph.mastermind;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CompareVtwo {
+/**
+ * Pour le jeu 2 (mastermind), classe comparant la proposition et la combinaison
+ */
+
+public class CompareGame2 {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
 
@@ -13,7 +17,7 @@ public class CompareVtwo {
     boolean[] marked2;
 
 
-    public CompareVtwo(int n) {
+    public CompareGame2(int n) {
         this.n = n;
         marked1 = new boolean[this.n];
         marked2 = new boolean[this.n];
@@ -23,9 +27,6 @@ public class CompareVtwo {
         return marked1;
     }
 
-    public boolean[] getMarked2() {
-        return marked2;
-    }
 
     /**Pour le jeu mastermind
      * Compare la combinaison avec la proposition
@@ -38,7 +39,7 @@ public class CompareVtwo {
 
 
 
-    public int[] compareVtwo(int[] combinaison, int[] proposition) {
+    public int[] compareComb(int[] combinaison, int[] proposition) {
         int nb1 = 0;
         int nb2 = 0;
         int[] result= new int[2];

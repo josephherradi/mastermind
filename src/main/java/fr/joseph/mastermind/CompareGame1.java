@@ -1,7 +1,18 @@
 package fr.joseph.mastermind;
 import java.util.Arrays;
 
-public class CompareInfSup {
+/**
+ * Pour le jeu1 (rechercher +/-) classe qui compare la proposition avec la combinaison
+ */
+public class CompareGame1 {
+
+
+    int n;
+
+    public CompareGame1(int n) {
+        this.n = n;
+    }
+
     /**
      * pour la recherche +/-
      * compare tirage de l'ordinateur avec la proposition de l'utilisateur
@@ -9,19 +20,6 @@ public class CompareInfSup {
      * @param proposition
      * @return resCompare
      *         tableau de comparaison des combinaisons indiquant +/-/=
-     */
-
-    int n;
-
-    public CompareInfSup(int n) {
-        this.n = n;
-    }
-
-    /**
-     *
-     * @param combinaison
-     * @param proposition
-     * @return
      */
     public String[] compare(int[] combinaison, int[] proposition) {
         String[] resCompare = new String[n];

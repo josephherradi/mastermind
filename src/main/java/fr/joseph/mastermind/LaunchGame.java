@@ -27,16 +27,16 @@ public class LaunchGame {
     public void startGame1(char mode,int n, int m, int nMaxTry,boolean dev){
 
              if (mode == '1') {
-                StartChallengerMode startChallengerMode = new StartChallengerMode(n, m, nMaxTry,dev);
-                startChallengerMode.challengeMode(n, m, nMaxTry,dev);
+                StartChallengerModeGame1 startChallengerModeGame1 = new StartChallengerModeGame1(n, m, nMaxTry,dev);
+                startChallengerModeGame1.challengeMode(n, m, nMaxTry,dev);
 
             } else if (mode == '2') {
-                StartDefenderMode startDefenderMode = new StartDefenderMode(n, m, nMaxTry);
-                startDefenderMode.defenderMode(n, m, nMaxTry);
+                StartDefenderModeGame1 startDefenderModeGame1 = new StartDefenderModeGame1(n, m, nMaxTry);
+                startDefenderModeGame1.defenderMode(n, m, nMaxTry);
 
             } else if (mode == '3') {
-                StartDuelMode startDuelMode = new StartDuelMode(n, m, nMaxTry,dev);
-                startDuelMode.duelMode1(n, m,dev);
+                StartDuelMode2Games startDuelMode2Games = new StartDuelMode2Games(n, m, nMaxTry,dev);
+                startDuelMode2Games.duelMode1(n, m,dev);
 
             }
 
@@ -57,15 +57,15 @@ public class LaunchGame {
 
 
             if (mode == '1') {
-                StartChallengerMode2 startChallengerMode2 = new StartChallengerMode2(n, m, nMaxTry,dev);
-                startChallengerMode2.challengeMode2(n, m, nMaxTry,dev);
+                StartChallengerModeGame2 startChallengerModeGame2 = new StartChallengerModeGame2(n, m, nMaxTry,dev);
+                startChallengerModeGame2.challengeMode2(n, m, nMaxTry,dev);
             } else if (mode == '2') {
-                StartDefenderMode2 startDefenderMode2 = new StartDefenderMode2(n, m, nMaxTry);
-                startDefenderMode2.defenderMode2(n, m, nMaxTry,dev);
+                StartDefenderModeGame2 startDefenderModeGame2 = new StartDefenderModeGame2(n, m, nMaxTry);
+                startDefenderModeGame2.defenderMode2(n, m, nMaxTry);
 
             } else if (mode == '3') {
-                StartDuelMode startDuelMode = new StartDuelMode(n, m, nMaxTry,dev);
-                startDuelMode.duelMode2(n, m,dev);
+                StartDuelMode2Games startDuelMode2Games = new StartDuelMode2Games(n, m, nMaxTry,dev);
+                startDuelMode2Games.duelMode2(n, m,dev);
 
             }
     }

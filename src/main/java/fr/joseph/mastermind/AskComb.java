@@ -2,7 +2,7 @@ package fr.joseph.mastermind;
 
 import java.util.Scanner;
 
-/** permet la saisie d'une combinaison du joueur
+/** Classe permettant la saisie d'une combinaison/proposition du joueur
  */
 
 class AskComb{
@@ -13,6 +13,11 @@ class AskComb{
     public AskComb(int n) {
         this.n = n;
     }
+
+    /**
+     *Demande la saisie d'une combinaison/proposition joueur
+     * @return un tableau d'entiers à n chiffres
+     */
 
     public int [] AskN() {
 

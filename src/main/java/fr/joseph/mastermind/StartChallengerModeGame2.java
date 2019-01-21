@@ -3,7 +3,6 @@ package fr.joseph.mastermind;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -14,7 +13,7 @@ import java.util.stream.IntStream;
  * et le nombre de chiffres présents et pas bien placés
  */
 
-public class StartChallengerMode2 {
+public class StartChallengerModeGame2 {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
     int n;
@@ -25,7 +24,7 @@ public class StartChallengerMode2 {
 
 
 
-    public StartChallengerMode2(int n, int m, int nMaxTry, boolean dev) {
+    public StartChallengerModeGame2(int n, int m, int nMaxTry, boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
@@ -33,6 +32,13 @@ public class StartChallengerMode2 {
 
     }
 
+    /**
+     * Challenger mode pour le mastermind
+     * @param n nombre de chiffres de la combinaison
+     * @param m chiffre max pour le tirage
+     * @param nMaxTry nombre de coups
+     * @param dev booléen mode developpeur activé ou non
+     */
 
     public void challengeMode2(int n, int m, int nMaxTry, boolean dev) {
         int nTry = 0;
@@ -50,7 +56,7 @@ public class StartChallengerMode2 {
 
         AskComb askComb = new AskComb(n);
 
-        CompareVtwo compareVtwo= new CompareVtwo(n);
+        CompareGame2 compareGame2 = new CompareGame2(n);
 
 
 
@@ -65,10 +71,10 @@ public class StartChallengerMode2 {
             String resultFpropos= IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
 
             logger.info("Proposition "+nTry+": "+resultFpropos);
-            int[] resultCompare = compareVtwo.compareVtwo(resultCombi, resultPropos);
-            boolean resultTry = compareVtwo.resGame2(resultCompare);
+            int[] resultCompare = compareGame2.compareComb(resultCombi, resultPropos);
+            boolean resultTry = compareGame2.resGame2(resultCompare);
             System.out.println("");
-            compareVtwo.showResult(resultCompare);
+            compareGame2.showResult(resultCompare);
 
             equalNtry = resultTry;
 

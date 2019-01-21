@@ -22,14 +22,14 @@ public class Main {
         boolean dev=propertyValues.isDev();
 
 
-        System.out.println("n= "+n);
-        System.out.println("nMaxTry "+nMaxTry);
-        System.out.println("m= "+m);
-        System.out.println("dev= "+dev);
-        logger.info("n= "+n);
-        logger.info("nMaxTry "+nMaxTry);
-        logger.info("m= "+m);
-        logger.info("dev= "+dev);
+        System.out.println(n+" chiffres de la combinaison");
+        System.out.println("Nombre max de coups: "+nMaxTry);
+        System.out.println("chiffre max pour les tirages ordinateur= "+m);
+        System.out.println("Dev mode= "+dev);
+        logger.info(n+" chiffres de la combinaison");
+        logger.info("Nombre max de coups "+nMaxTry);
+        logger.info("chiffre max pour les tirages ordinateur= "+m);
+        logger.info("Dev mode= "+dev);
 
 
 

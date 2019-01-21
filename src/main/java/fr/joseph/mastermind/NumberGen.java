@@ -1,12 +1,9 @@
 package fr.joseph.mastermind;
-
+/**
+ * Genere une combinaison aléatoire à n chiffres avec m chiffre max
+ *
+ */
 public class NumberGen {
-    /**
-     * Genere une combinaison aléatoire à n chiffres avec m chiffre max
-     *
-     */
-
-
     int n;
     int m;
 

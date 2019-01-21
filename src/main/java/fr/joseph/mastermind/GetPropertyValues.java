@@ -6,7 +6,9 @@ import java.io.InputStream;
 import java.util.Properties;
 
 
-
+/**
+ * Permet de récupérer les paramètres du jeu du fichier de configuration
+ */
 public class GetPropertyValues {
     InputStream inputStream;
     int n;
@@ -35,9 +37,13 @@ public class GetPropertyValues {
         return dev;
     }
 
+    /**
+     * permet de lire config.properties dans src/main/resources et de récupérer les paramètres:
+     * int n, int n, int Maxtry, int m et booléen dev
+     * @throws IOException
+     */
+
     public  void getPropValues() throws IOException {
-
-
 
         try {
             Properties prop = new Properties();
@@ -48,7 +54,7 @@ public class GetPropertyValues {
             if (inputStream != null) {
                 prop.load(inputStream);
             } else {
-                throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
+                throw new FileNotFoundException("Fichier de configuration '" + propFileName + "' introuvable dans le chemin spécifié");
             }
 
 

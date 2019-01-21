@@ -5,34 +5,37 @@ import java.util.stream.IntStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class StartChallengerMode {
+/**
+ * Challenger mode de la recherche +/-
+ * Le joueur devine la combinaison secrète de l'IA
+ * en nMaxTry coups
+ * L'IA donne les indiquations +/-/= au joueur
+ */
+
+
+public class StartChallengerModeGame1 {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
-
-    /**
-     * Challenger mode de la recherche +/-
-     * Le joueur devine la combinaison secrète de l'IA
-     * en nMaxTry coups
-     * L'IA donne les indiquations +/-/= au joueur
-     */
     int n;
     int m;
     int nMaxTry;
     boolean equalNtry=true;
     boolean dev=true;
 
-    public StartChallengerMode(int n, int m, int nMaxTry, boolean dev) {
+    public StartChallengerModeGame1(int n, int m, int nMaxTry, boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
         this.dev=dev;
     }
 
-
-
-
-
-
+    /**
+     * Challenger mode de la recherche +/-
+     * @param n nombre de chiffres de la combinaison
+     * @param m chiffre max pour le tirage
+     * @param nMaxTry nombre de coups
+     * @param dev booléen mode developpeur activé ou non
+     */
 
     public void challengeMode(int n, int m, int nMaxTry, boolean dev) {
         int nTry = 0;
@@ -46,7 +49,7 @@ public class StartChallengerMode {
         }
 
         AskComb askComb = new AskComb(n);
-        CompareInfSup compareInfSup = new CompareInfSup(n);
+        CompareGame1 compareGame1 = new CompareGame1(n);
 
 
 
@@ -61,11 +64,11 @@ public class StartChallengerMode {
             String resultFpropos= IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
 
             logger.info("Proposition "+nTry+": "+resultFpropos);
-            String[] resultCompare = compareInfSup.compare(resultCombi, resultPropos);
+            String[] resultCompare = compareGame1.compare(resultCombi, resultPropos);
             System.out.println(Arrays.toString(resultCompare));
             logger.info(Arrays.toString(resultCompare));
 
-            boolean resultTry = compareInfSup.resGame(resultCompare);
+            boolean resultTry = compareGame1.resGame(resultCompare);
             equalNtry=resultTry;
         } while (!equalNtry && (nTry < nMaxTry));
 

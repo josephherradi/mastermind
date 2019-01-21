@@ -15,7 +15,7 @@ import java.util.stream.IntStream;
  * sinon nouveau tirage
  */
 
-public class StartDefenderMode2 {
+public class StartDefenderModeGame2 {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
     int n;
@@ -24,14 +24,20 @@ public class StartDefenderMode2 {
     boolean equalNtry=true;
 
 
-    public StartDefenderMode2(int n, int m, int nMaxTry) {
+    public StartDefenderModeGame2(int n, int m, int nMaxTry) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
     }
 
+    /**
+     * Defender mode du mastermind
+     * @param n nombre de chiffres de la combinaison
+     * @param m chiffre max pour le tirage
+     * @param nMaxTry nombre de coups
+     */
 
-    public void defenderMode2(int n, int m, int nMaxTry,boolean dev) {
+    public void defenderMode2(int n, int m, int nMaxTry) {
         int nTry = 0;
         System.out.print("Entrez les " + n + " chiffres de la combinaison du joueur ");
         logger.info("Entrez les " + n + " chiffres de la combinaison du joueur ");
@@ -49,7 +55,7 @@ public class StartDefenderMode2 {
         Arrays.fill(resultPropos,0);
         int[] result= new int[2];
 
-        CompareVtwo compareVtwo = new CompareVtwo(n);
+        CompareGame2 compareGame2 = new CompareGame2(n);
 
 
         do {
@@ -64,12 +70,12 @@ public class StartDefenderMode2 {
             System.out.println(resultFPropos);
             logger.info(resultFPropos);
 
-            result = compareVtwo.compareVtwo(resultCombi, resultPropos);
+            result = compareGame2.compareComb(resultCombi, resultPropos);
 
             // tableau de booleen marked indiquant les chiffres présents et bien placés
-            marked=compareVtwo.getMarked1();
-            compareVtwo.showResult(result);
-            boolean resultTry = compareVtwo.resGame2(result);
+            marked= compareGame2.getMarked1();
+            compareGame2.showResult(result);
+            boolean resultTry = compareGame2.resGame2(result);
             equalNtry = resultTry;
 
 
@@ -97,7 +103,6 @@ public class StartDefenderMode2 {
      * @return
      *         chiffre aléatoire tiré entre 1 et m
      */
-
 
     private int PickN() {
 

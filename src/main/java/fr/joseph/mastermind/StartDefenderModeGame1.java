@@ -15,7 +15,7 @@ import java.util.stream.IntStream;
  * L'IA utilise les indications +/-/= pour tirer des nouvelles propositions
  */
 
-public class StartDefenderMode {
+public class StartDefenderModeGame1 {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
     int n;
@@ -24,13 +24,19 @@ public class StartDefenderMode {
     boolean equalNtry=true;
 
 
-    public StartDefenderMode(int n, int m, int nMaxTry) {
+    public StartDefenderModeGame1(int n, int m, int nMaxTry) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
 
     }
 
+    /**
+     * Defender mode de la recherche +/-
+     * @param n nombre de chiffres de la combinaison
+     * @param m chiffre max pour le tirage
+     * @param nMaxTry nombre de coups
+     */
 
     public void defenderMode(int n, int m, int nMaxTry) {
         int nTry = 0;
@@ -49,7 +55,7 @@ public class StartDefenderMode {
         int[] resultPropos= new int[n];
         Arrays.fill(resultPropos,0);
 
-        CompareInfSup compareInfSup = new CompareInfSup(n);
+        CompareGame1 compareGame1 = new CompareGame1(n);
 
 
 
@@ -64,10 +70,10 @@ public class StartDefenderMode {
             System.out.println(resultFPropos);
             logger.info(resultFPropos);
 
-            resultCompare = compareInfSup.compare(resultCombi, resultPropos);
+            resultCompare = compareGame1.compare(resultCombi, resultPropos);
             System.out.println(Arrays.toString(resultCompare));
             logger.info(Arrays.toString(resultCompare));
-            boolean resultTry = compareInfSup.resGame(resultCompare);
+            boolean resultTry = compareGame1.resGame(resultCompare);
             equalNtry = resultTry;
 
 

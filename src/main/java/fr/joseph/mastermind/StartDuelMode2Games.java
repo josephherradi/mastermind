@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
  * et le premier qui a deviné la combinaison de l'autre a gagné
  */
 
-public class StartDuelMode {
+public class StartDuelMode2Games {
     static final Logger logger = LogManager.getLogger(Logger.class.getName());
 
     int n;
@@ -22,7 +22,7 @@ public class StartDuelMode {
     boolean dev=false;
 
 
-    public StartDuelMode(int n, int m, int nMaxTry,boolean dev) {
+    public StartDuelMode2Games(int n, int m, int nMaxTry, boolean dev) {
         this.n = n;
         this.m = m;
         this.nMaxTry = nMaxTry;
@@ -35,12 +35,15 @@ public class StartDuelMode {
      *          n chiffres de la combinaisons
      * @param m
      *          chiffre max tiré
+     * @param dev
+     *            booléen
+     *            mode développeur activé ou non
      */
     public void duelMode1(int n, int m, boolean dev) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
-        CompareInfSup compareInfSup = new CompareInfSup(n);
+        CompareGame1 compareGame1 = new CompareGame1(n);
 
         int[] resultCombi1 = numberGen.combiGen();
         String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
@@ -73,11 +76,11 @@ public class StartDuelMode {
 
             logger.info(resultFpropos1);
 
-            String[] resultCompare1 = compareInfSup.compare(resultCombi1, resultPropos1);
+            String[] resultCompare1 = compareGame1.compare(resultCombi1, resultPropos1);
             System.out.println(Arrays.toString(resultCompare1));
             logger.info(Arrays.toString(resultCompare1));
 
-            resultTryGamer = compareInfSup.resGame(resultCompare1);
+            resultTryGamer = compareGame1.resGame(resultCompare1);
 
             if(!resultTryGamer){
                 this.promptEnterKey();
@@ -89,11 +92,11 @@ public class StartDuelMode {
             System.out.println(resultFPropos2);
             logger.info(resultFPropos2);
 
-            resultCompare2 = compareInfSup.compare(resultCombi2, resultPropos2);
+            resultCompare2 = compareGame1.compare(resultCombi2, resultPropos2);
             System.out.println(Arrays.toString(resultCompare2));
             logger.info(Arrays.toString(resultCompare2));
 
-            resultTryIA = compareInfSup.resGame(resultCompare2);}
+            resultTryIA = compareGame1.resGame(resultCompare2);}
             this.resultGame(resultTryGamer,resultTryIA);
         } while (!(resultTryGamer ^ resultTryIA));
 
@@ -105,13 +108,16 @@ public class StartDuelMode {
      *          n chiffres de la combinaison
      * @param m
      *          chiffre max pour le tirage
+     * @param dev
+     *          booleen
+     *          mode développeur activé ou non
      */
     public void duelMode2(int n, int m, boolean dev) {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
-        CompareVtwo compareVtwoIA = new CompareVtwo(n);
-        CompareVtwo compareVtwoGamer = new CompareVtwo(n);
+        CompareGame2 compareGame2IA = new CompareGame2(n);
+        CompareGame2 compareGame2Gamer = new CompareGame2(n);
 
 
 
@@ -147,10 +153,10 @@ public class StartDuelMode {
 
             logger.info(resultFpropos1);
 
-            result1 = compareVtwoGamer.compareVtwo(resultCombi1, resultPropos1);
-            compareVtwoGamer.showResult(result1);
+            result1 = compareGame2Gamer.compareComb(resultCombi1, resultPropos1);
+            compareGame2Gamer.showResult(result1);
 
-            resultTryGamer = compareVtwoGamer.resGame2(result1);
+            resultTryGamer = compareGame2Gamer.resGame2(result1);
 
             if(!resultTryGamer){
                 this.promptEnterKey();
@@ -164,12 +170,12 @@ public class StartDuelMode {
                 System.out.println(resultFPropos2);
                 logger.info(resultFPropos2);
 
-                result2 = compareVtwoIA.compareVtwo(resultCombi2, resultPropos2);
-                marked=compareVtwoIA.getMarked1();
-                compareVtwoIA.showResult(result2);
+                result2 = compareGame2IA.compareComb(resultCombi2, resultPropos2);
+                marked= compareGame2IA.getMarked1();
+                compareGame2IA.showResult(result2);
 
 
-                resultTryIA = compareVtwoIA.resGame2(result2);}
+                resultTryIA = compareGame2IA.resGame2(result2);}
 
             this.resultGame(resultTryGamer,resultTryIA);
         } while (!(resultTryGamer ^ resultTryIA));
