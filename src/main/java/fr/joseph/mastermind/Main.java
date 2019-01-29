@@ -20,12 +20,19 @@ public class Main {
         int nMaxTry= propertyValues.getnMaxTry();
         int m=propertyValues.getM();
         boolean dev=propertyValues.isDev();
-
-
+        System.out.println("#########################");
+        System.out.println("# MASTERMIND GAMES V1.0 #");
+        System.out.println("#########################");
+        System.out.println("");
         System.out.println(n+" chiffres de la combinaison");
         System.out.println("Nombre max de coups: "+nMaxTry);
         System.out.println("chiffre max pour les tirages ordinateur= "+m);
         System.out.println("Dev mode= "+dev);
+        System.out.println("");
+        logger.info("#########################");
+        logger.info("# MASTERMIND GAMES V1.0 #");
+        logger.info("#########################");
+        logger.info("");
         logger.info(n+" chiffres de la combinaison");
         logger.info("Nombre max de coups "+nMaxTry);
         logger.info("chiffre max pour les tirages ordinateur= "+m);

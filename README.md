@@ -16,6 +16,13 @@ Java 1.6/1.7/1.8
 maven-compiler-plugin 3.8.0
 maven-jar-plugin 3.1.1
 
+### Parmètrage
+Le fichier config.properties dans src/main/resources permet de paramètrer:
+n: le nombre de chiffres de la combinaison
+nMaxTry:  le nombre de coups à jouer
+m= le chiffre max pour le tirage ordinateur
+dev: true/false permet d'activer ou non l'affichage de la combinaison secrète de l'ordinateur
+
 ### Compilation
 
 ```
