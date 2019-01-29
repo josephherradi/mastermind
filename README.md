@@ -10,7 +10,7 @@ https://github.com/josephherradi/mastermind.git
 
 ### Prérequis
 
->= Java JDK 1.6, Maven
+à partir de Java JDK 1.6, Maven
 
 testé avec:
 Java 1.6/1.7/1.8
