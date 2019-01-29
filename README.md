@@ -36,6 +36,8 @@ mvn clean install
 ```
 java -jar target/Mastermind.jar
 ```
+### logging
+un fichier test.log est généré à la racine du projet pour une compilation avec l'IDE et dans le dossier du jar.
 
 ## Version
 1.0 - Initial release  29/01/2018
