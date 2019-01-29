@@ -47,8 +47,10 @@ public class Main {
                     logger.info("2- Mastermind");
 
 
+                    try {
+                        game = sc.nextLine().charAt(0);
 
-                    game = sc.nextLine().charAt(0);
+                    }catch (StringIndexOutOfBoundsException e){System.out.println("Saisissez le jeu souhaité 1 ou 2");}
                     logger.info("jeu choisi "+game);
 
 
@@ -65,8 +67,9 @@ public class Main {
                     logger.info("1- Challenger");
                     logger.info("2- Defender");
                     logger.info("3- Duel");
-
-                    mode = sc.nextLine().charAt(0);
+                    try {
+                        mode = sc.nextLine().charAt(0);
+                    }catch (StringIndexOutOfBoundsException e){System.out.println("Sélectionnez le mode de jeu souhaité 1,2 ou 3");}
                     logger.info("Mode de jeu choisi "+mode);
 
 
@@ -106,8 +109,9 @@ public class Main {
                 logger.info("1-rejouer?  ");
                 logger.info("2-quitter?  ");
 
-
-                reponse1 = sc.nextLine().charAt(0);
+                try {
+                    reponse1 = sc.nextLine().charAt(0);
+                }catch (StringIndexOutOfBoundsException e){System.out.println("Faites le choix 1 ou 2");}
                 logger.info("Réponse "+reponse1);
 
             } while (reponse1 != '1' && reponse1 != '2');
@@ -120,7 +124,10 @@ public class Main {
                     logger.info("Souhaitez-vous  ");
                     logger.info("1-rejouer au meme jeu?  ");
                     logger.info("2-choisir le jeu/mode?  ");
-                    reponse2 = sc.nextLine().charAt(0);
+                    try {
+                        reponse2 = sc.nextLine().charAt(0);
+                    }catch (StringIndexOutOfBoundsException e){System.out.println("Faites le choix 1 ou 2");}
+
                     logger.info("Réponse "+reponse2);
 
                 } while (reponse2 != '1' && reponse2 != '2');

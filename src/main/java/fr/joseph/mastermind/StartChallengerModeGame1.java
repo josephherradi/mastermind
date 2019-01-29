@@ -1,7 +1,6 @@
 package fr.joseph.mastermind;
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,21 +30,17 @@ public class StartChallengerModeGame1 {
 
     /**
      * Challenger mode de la recherche +/-
-     * @param n nombre de chiffres de la combinaison
-     * @param m chiffre max pour le tirage
-     * @param nMaxTry nombre de coups
-     * @param dev booléen mode developpeur activé ou non
      */
 
-    public void challengeMode(int n, int m, int nMaxTry, boolean dev) {
+    public void challengeMode() {
         int nTry = 0;
 
         NumberGen numberGen = new NumberGen(n, m);
         int[] resultCombi = numberGen.combiGen();
-        String resultFcombi= IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFCombi = Utils.arrayToString(resultCombi);
         if(dev){
-        System.out.println("Combinaison de l'IA "+resultFcombi);
-            logger.info("Combinaison de l'IA "+resultFcombi);
+        System.out.println("Combinaison de l'IA "+resultFCombi);
+            logger.info("Combinaison de l'IA "+resultFCombi);
         }
 
         AskComb askComb = new AskComb(n);
@@ -61,7 +56,7 @@ public class StartChallengerModeGame1 {
             logger.info("chiffres de votre proposition ");
 
             int[] resultPropos = askComb.AskN();
-            String resultFpropos= IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
+            String resultFpropos = Utils.arrayToString(resultPropos);
 
             logger.info("Proposition "+nTry+": "+resultFpropos);
             String[] resultCompare = compareGame1.compare(resultCombi, resultPropos);
@@ -81,9 +76,9 @@ public class StartChallengerModeGame1 {
         } else {
             System.out.println("Fail :( ");
             System.out.println("La combinaison était");
-            System.out.println(resultFcombi);
+            System.out.println(resultFCombi);
             logger.info("Fail :(");
-            logger.info("La combinaison était "+resultFcombi);
+            logger.info("La combinaison était "+resultFCombi);
         }
 
 

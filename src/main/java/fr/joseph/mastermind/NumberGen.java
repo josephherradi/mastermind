@@ -14,11 +14,9 @@ public class NumberGen {
 
     /**
      * Tirage d'un chiffre max
-     * @param m
-     *          chiffre max
      * @return chiffre aléatoire tiré
      */
-    private int pickN(int m) {
+    private int pickN() {
         return 1 + (int) (Math.random() * m);
     }
 
@@ -30,7 +28,7 @@ public class NumberGen {
     public int[] combiGen() {
         int[] combinaison= new int[n];
         for (int i = 0; i < n; i++) {
-            combinaison [i] = pickN(m);
+            combinaison [i] = pickN();
         }
         return combinaison;
     }

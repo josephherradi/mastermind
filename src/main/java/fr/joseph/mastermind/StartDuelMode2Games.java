@@ -5,8 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 /**
  * Duel Mode: Le joueur et l'IA jouent tour à tour
@@ -31,31 +30,24 @@ public class StartDuelMode2Games {
 
     /**
      * Duel Mode de la Recherche +/-
-     * @param n
-     *          n chiffres de la combinaisons
-     * @param m
-     *          chiffre max tiré
-     * @param dev
-     *            booléen
-     *            mode développeur activé ou non
      */
-    public void duelMode1(int n, int m, boolean dev) {
+    public void duelMode1() {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
         CompareGame1 compareGame1 = new CompareGame1(n);
 
         int[] resultCombi1 = numberGen.combiGen();
-        String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFCombi1 = Utils.arrayToString(resultCombi1);
         if(dev){
-            System.out.println("Combinaison de secrète l'IA " + resultFcombi1);
-            logger.info("Combinaison de secrète l'IA " + resultFcombi1);
+            System.out.println("Combinaison de secrète l'IA " + resultFCombi1);
+            logger.info("Combinaison de secrète l'IA " + resultFCombi1);
         }
 
         System.out.println("Entrez la combinaison secrète du joueur");
         logger.info("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
-        String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFCombi2 = Utils.arrayToString(resultCombi2);
         System.out.println("Combinaison secrète du joueur " + resultFCombi2);
         logger.info("Combinaison secrète du joueur " + resultFCombi2);
 
@@ -72,7 +64,7 @@ public class StartDuelMode2Games {
             System.out.println("Proposition du joueur");
             logger.info("Proposition du joueur");
             int[] resultPropos1 = askComb.AskN();
-            String resultFpropos1= IntStream.of(resultPropos1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+            String resultFpropos1 = Utils.arrayToString(resultPropos1);
 
             logger.info(resultFpropos1);
 
@@ -88,7 +80,7 @@ public class StartDuelMode2Games {
             System.out.print("Proposition de l'ordinateur ");
             logger.info("Proposition de l'ordinateur ");
             resultPropos2 = this.smartCombiGen(resultCompare2, resultPropos2);
-            String resultFPropos2 = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+                String resultFPropos2 = Utils.arrayToString(resultPropos2);
             System.out.println(resultFPropos2);
             logger.info(resultFPropos2);
 
@@ -104,15 +96,8 @@ public class StartDuelMode2Games {
 
     /**
      * Duel Mode du Mastermind
-     * @param n
-     *          n chiffres de la combinaison
-     * @param m
-     *          chiffre max pour le tirage
-     * @param dev
-     *          booleen
-     *          mode développeur activé ou non
      */
-    public void duelMode2(int n, int m, boolean dev) {
+    public void duelMode2() {
 
         NumberGen numberGen = new NumberGen(n, m);
         AskComb askComb = new AskComb(n);
@@ -122,7 +107,7 @@ public class StartDuelMode2Games {
 
 
         int[] resultCombi1 = numberGen.combiGen();
-        String resultFcombi1 = IntStream.of(resultCombi1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFcombi1 = Utils.arrayToString(resultCombi1);
        if(dev){
         System.out.println("Combinaison secrète de l'IA " + resultFcombi1);
        logger.info("Combinaison secrète de l'IA " + resultFcombi1);
@@ -130,7 +115,7 @@ public class StartDuelMode2Games {
         System.out.println("Entrez la combinaison secrète du joueur");
        logger.info("Entrez la combinaison secrète du joueur");
         int[] resultCombi2 = askComb.AskN();
-        String resultFCombi2 = IntStream.of(resultCombi2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFCombi2 = Utils.arrayToString(resultCombi2);
         System.out.println("Combinaison secrète du joueur " + resultFCombi2);
         logger.info("Combinaison secrète du joueur " + resultFCombi2);
 
@@ -149,7 +134,7 @@ public class StartDuelMode2Games {
             System.out.println("Proposition du joueur");
             logger.info("Proposition du joueur");
             int[] resultPropos1 = askComb.AskN();
-            String resultFpropos1= IntStream.of(resultPropos1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+            String resultFpropos1 = Utils.arrayToString(resultPropos1);
 
             logger.info(resultFpropos1);
 
@@ -166,7 +151,7 @@ public class StartDuelMode2Games {
                 logger.info("Proposition de l'ordinateur ");
 
                 resultPropos2 = this.smartCombiGen2(marked, resultPropos2);
-                String resultFPropos2 = IntStream.of(resultPropos2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+                String resultFPropos2 = Utils.arrayToString(resultPropos2);
                 System.out.println(resultFPropos2);
                 logger.info(resultFPropos2);
 

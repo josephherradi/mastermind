@@ -5,8 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 /**
  * Defender mode de la recherche +/-
@@ -33,12 +32,9 @@ public class StartDefenderModeGame1 {
 
     /**
      * Defender mode de la recherche +/-
-     * @param n nombre de chiffres de la combinaison
-     * @param m chiffre max pour le tirage
-     * @param nMaxTry nombre de coups
      */
 
-    public void defenderMode(int n, int m, int nMaxTry) {
+    public void defenderMode() {
         int nTry = 0;
         System.out.print("Entrez les " + n + " chiffres de la combinaison du joueur ");
         logger.info("Entrez les " + n + " chiffres de la combinaison du joueur ");
@@ -46,7 +42,7 @@ public class StartDefenderModeGame1 {
         AskComb askComb = new AskComb(n);
         int[] resultCombi = askComb.AskN();
 
-        String resultFCombi = IntStream.of(resultCombi).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        String resultFCombi = Utils.arrayToString(resultCombi);
         logger.info(resultFCombi);
 //        System.out.println(resultFCombi);
 
@@ -66,7 +62,7 @@ public class StartDefenderModeGame1 {
             resultPropos = this.smartCombiGen(resultCompare,resultPropos);
             System.out.print("Proposition de l'ordinateur ");
             logger.info("Proposition de l'ordinateur ");
-            String resultFPropos = IntStream.of(resultPropos).mapToObj(String::valueOf).collect(Collectors.joining(""));
+            String resultFPropos = Utils.arrayToString(resultPropos);
             System.out.println(resultFPropos);
             logger.info(resultFPropos);
 

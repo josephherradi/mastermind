@@ -23,7 +23,6 @@ public class CompareGame1 {
      */
     public String[] compare(int[] combinaison, int[] proposition) {
         String[] resCompare = new String[n];
-        try {
         for (int i = 0; i < n; i++) {
 
                if (combinaison[i] == proposition[i]) {
@@ -35,9 +34,7 @@ public class CompareGame1 {
                }
 
            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Veuillez proposer une combinaison à "+n+" chiffres");
-        }
+
         return resCompare;
     }
 

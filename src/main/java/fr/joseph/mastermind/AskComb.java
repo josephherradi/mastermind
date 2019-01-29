@@ -1,5 +1,6 @@
 package fr.joseph.mastermind;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /** Classe permettant la saisie d'une combinaison/proposition du joueur
@@ -8,7 +9,7 @@ import java.util.Scanner;
 class AskComb{
 
     int n;
-    String saisie;
+    String saisieStr;
 
     public AskComb(int n) {
         this.n = n;
@@ -22,17 +23,27 @@ class AskComb{
     public int [] AskN() {
 
         Scanner scanner = new Scanner(System.in);
+
         do {
-             saisie = scanner.next();
-             if(saisie.length()!=n){
-              System.out.println("nombre de chiffres incorrects, saisissez "+n+" chiffres");
-             }
-        }while (saisie.length()!=n);
+            while (true) {
+                saisieStr = scanner.next();
+                int saisieInt = 0;
+                    try {
+                        saisieInt = Integer.parseInt(saisieStr);
+                    break;
+                    } catch (NumberFormatException e) {
+            System.out.println("Erreur de format, saisissez une combinaison à "+n+" chiffres");
+        }
+         }
+            if(saisieStr.length()!=n){System.out.println("Saisissez une combinaison à "+n+" chiffres");}
 
-        int[] proposition= new int[saisie.length()];
+        }while (saisieStr.length()!=n);
 
-        for (int i = 0; i < saisie.length(); i++) {
-            proposition[i] = Integer.parseInt(saisie.charAt(i)+"");
+
+        int[] proposition= new int[saisieStr.length()];
+
+        for (int i = 0; i <saisieStr.length(); i++) {
+            proposition[i] = Integer.parseInt(saisieStr.charAt(i)+"");
         }
         return proposition;
     }
