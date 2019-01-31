@@ -19,7 +19,10 @@ public class Main {
         int n=propertyValues.getN();
         int nMaxTry= propertyValues.getnMaxTry();
         int m=propertyValues.getM();
-        boolean dev=propertyValues.isDev();
+
+        boolean dev=Utils.isModeDev(args,propertyValues.isDev());
+
+
         System.out.println("#########################");
         System.out.println("# MASTERMIND GAMES V1.0 #");
         System.out.println("#########################");

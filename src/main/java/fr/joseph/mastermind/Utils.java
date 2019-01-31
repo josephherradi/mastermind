@@ -18,4 +18,26 @@ public class Utils {
         }
         return result;
     }
+
+    /**
+     * Activation du mode dev à partir par args ou config.properties
+     * Si args est dev alors le mode dev est activé
+     * sinon on utilise ce qui est indiqué dans config.properties
+     * @param args argument de la methode main de la classe principale
+     * @param configModeDev mode dev indiqué dans config.properties
+     * @return true/false activation mode dev
+     */
+    public static boolean isModeDev(String[] args, Boolean configModeDev){
+        if(args.length==0){
+            return configModeDev;
+        }
+        if(args[0].equals("dev")){
+            return  true;
+        }
+        else{
+            return configModeDev;
+        }
+    }
+
+
 }
