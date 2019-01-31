@@ -20,7 +20,7 @@ public class Utils {
     }
 
     /**
-     * Activation du mode dev à partir par args ou config.properties
+     * Activation du mode dev par args ou config.properties
      * Si args est dev alors le mode dev est activé
      * sinon on utilise ce qui est indiqué dans config.properties
      * @param args argument de la methode main de la classe principale

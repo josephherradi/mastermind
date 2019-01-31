@@ -24,7 +24,7 @@ public class Main {
 
 
         System.out.println("#########################");
-        System.out.println("# MASTERMIND GAMES V1.0 #");
+        System.out.println("# MASTERMIND GAMES V1.1 #");
         System.out.println("#########################");
         System.out.println("");
         System.out.println(n+" chiffres de la combinaison");
