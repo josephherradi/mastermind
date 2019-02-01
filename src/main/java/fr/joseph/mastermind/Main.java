@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Dev mode= "+dev);
         System.out.println("");
         logger.info("#########################");
-        logger.info("# MASTERMIND GAMES V1.0 #");
+        logger.info("# MASTERMIND GAMES V1.1 #");
         logger.info("#########################");
         logger.info("");
         logger.info(n+" chiffres de la combinaison");
